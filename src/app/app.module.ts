@@ -5,26 +5,36 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { OrderComponent } from './order/order.component';
 import { FurnitureManagementComponent } from './furniture-management/furniture-management.component';
-<<<<<<< HEAD
 import { CustomerComponent } from './customer/customer.component';
-=======
+import { AccountComponent } from './account/account.component';
+import { AddressComponent } from './address/address.component';
+import { CartComponent } from './cart/cart.component';
+import { CustomerfeedbackComponent } from './customerfeedback/customerfeedback.component';
+import { CustomershoppingComponent } from './customershopping/customershopping.component';
 import { OrderCancellationComponent } from './order-cancellation/order-cancellation.component';
->>>>>>> 39fb66ed184f17e9238024586eff9b9e86fcf97e
+import { PaymentComponent } from './payment/payment.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     OrderComponent,
     FurnitureManagementComponent,
-<<<<<<< HEAD
-    CustomerComponent
-=======
-    OrderCancellationComponent
->>>>>>> 39fb66ed184f17e9238024586eff9b9e86fcf97e
+    CustomerComponent,
+    AccountComponent,
+    AddressComponent,
+    CartComponent,
+    CustomerfeedbackComponent,
+    CustomershoppingComponent,
+    OrderCancellationComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
