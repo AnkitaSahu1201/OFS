@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { OrderComponent } from './order/order.component';
 import { FurnitureManagementComponent } from './furniture-management/furniture-management.component';
+import { OrderCancellationComponent } from './order-cancellation/order-cancellation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OrderComponent,
-    FurnitureManagementComponent
+    FurnitureManagementComponent,
+    OrderCancellationComponent
   ],
   imports: [
     BrowserModule,
