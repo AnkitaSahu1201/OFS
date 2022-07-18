@@ -1,23 +1,45 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Order } from '../model/order';
+import { Furniture } from '../model/Furniture';
 
 @Injectable({
   providedIn: 'root'
 })
-export class OrderCancellationService {
+export class FurnitureManagementService {
 
   constructor(private h: HttpClient) { }
-
   public url: string = 'http://localhost:9091/';
-
-  deleteOrder(ord: Order): Observable<any>{
-    return this.h.delete(this.url + "remove/");
+  
+  getAllFurnitures(): Observable<any> {
+    return this.h.get<any[]>(this.url + "allfurnitures");
   }
 
-  deleteOrderById(orderId: number): Observable<any>{
-    return this.h.delete(this.url + "remove/"+ orderId, {responseType: 'json'});
+
+  getFurnitureById(furnitureId:number):Observable<any>{
+    return this.h.get<any[]>(this.url + "getFurnituresById"+furnitureId);
+  }
+
+
+  registerFurniture(furniture:Furniture):Observable<any>{
+    return this.h.post(this.url + "register", {responseType: 'text'})
+  }
+
+
+  updateFurniture(furniture:Furniture):Observable<any>{
+    return this.h.put(this.url + "update", {responseType: 'json'});
+  }
+
+  updateFurnitureById(furnitureId:number,furniture:Furniture):Observable<any>{
+    return this.h.put(this.url + "updatebyId/"+furnitureId, {responseType: 'json'});
+  }
+
+  deleteFurniture(furniture:Furniture):Observable<any>{
+    return this.h.delete(this.url + "remove");
+  }
+
+  deleteFurnitureById(furnitureId:number):Observable<any>{
+    return this.h.delete(this.url + "remove/"+ furnitureId, {responseType: 'json'});
   }
 
 }
