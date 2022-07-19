@@ -16,6 +16,7 @@ import { PaymentComponent } from './payment/payment.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { UpdateAddressComponent } from './address/update-address/update-address.component';
+import { AddfurnitureComponent } from './furniture-management/addfurniture/addfurniture.component';
 
 @NgModule({
   declarations: [
