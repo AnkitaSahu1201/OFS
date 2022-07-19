@@ -1,0 +1,49 @@
+<div class="hero">
+    <nav>
+      <h2 class="logo">Furnitures Around</h2>
+      <ul>
+        <li><a href="#"> Home </a></li>
+        <li><a href="#"> About </a></li>
+        <li><a href="#"> Service </a></li>
+        <li><a href="#"> Cart</a></li>
+        <li><a href="#"> Report </a></li>
+      </ul>
+      <button type="button" class="logOut">Logout</button>
+    </nav>
+    <div class="container" style="text-align: center">
+      <table class="table table-lg table-hover furnitures form-box">
+        
+        
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Mobile No</th>
+                <th scope="col">Email</th>
+                
+        
+              </tr>
+              <tr>
+                <td scope="col">Purabi</td>
+                <td scope="col">95456766787</td>
+                <td scope="col">abcd@gmail.com</td>
+               
+        
+
+              </tr>
+              
+        
+              <tr *ngFor="let c of cust">
+                  <td>{{ c.username }}</td>
+                <td>{{ c.mobileNo }}</td>
+                <td>{{ c.email }}</td>
+        
+              </tr>
+        
+        
+              
+        
+               
+               
+      </table>
+    </div>
+<body>
+    
