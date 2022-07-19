@@ -9,10 +9,10 @@ import { Furniture } from '../model/Furniture';
 export class FurnitureManagementService {
 
   constructor(private h: HttpClient) { }
-  public url: string = 'http://localhost:9091/';
+  public url: string = 'http://localhost:9091/furnitureManagement/';
   
   getAllFurnitures(): Observable<any> {
-    return this.h.get<any[]>(this.url + "allfurnitures");
+    return this.h.get<any[]>(this.url + "furnitures");
   }
 
 
@@ -22,16 +22,16 @@ export class FurnitureManagementService {
 
 
   registerFurniture(furniture:Furniture):Observable<any>{
-    return this.h.post(this.url + "register", {responseType: 'text'})
+    return this.h.post(this.url +"furnitures",furniture, {responseType: 'text'})
   }
 
 
   updateFurniture(furniture:Furniture):Observable<any>{
-    return this.h.put(this.url + "update", {responseType: 'json'});
+    return this.h.put(this.url + "furnitures",furniture, {responseType: 'json'});
   }
 
   updateFurnitureById(furnitureId:number,furniture:Furniture):Observable<any>{
-    return this.h.put(this.url + "updatebyId/"+furnitureId, {responseType: 'json'});
+    return this.h.put(this.url + "furnitures"+furnitureId,furniture, {responseType: 'json'});
   }
 
   deleteFurniture(furniture:Furniture):Observable<any>{

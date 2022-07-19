@@ -16,6 +16,7 @@ export class FurnitureManagementComponent implements OnInit {
 
   ngOnInit() {
     this.service.getAllFurnitures().subscribe(f=>this.furnitures=f);
+    console.log(this.furnitures);
   }
 
   addToCart(furniture:Furniture):any{

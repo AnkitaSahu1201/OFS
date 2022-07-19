@@ -11,6 +11,7 @@ export class ViewAllFeedbackComponent implements OnInit {
 
   public rev:Review=new Review();
   viewlist:boolean=false;
+  rating:number;
   constructor(private service:CustomerfeedbackService) { 
   }
   listrev:Review[];
@@ -19,9 +20,9 @@ export class ViewAllFeedbackComponent implements OnInit {
   viewAllReview():void{
     this.service.getAllReviews().subscribe((r)=>{this.listrev=r,this.viewlist=true});
   }
-  // viewAllReviewRating():void{
-  //   this.service.getReviewByreviewRating(reviewRating).subscribe((r)=>{this.listrev=r,this.viewlist=true});
-  // }
+  viewAllReviewRating():void{
+    this.service.getReviewByreviewRating(this.rating).subscribe((r)=>{this.listrev=r,this.viewlist=true});
+  }
  
  
   
