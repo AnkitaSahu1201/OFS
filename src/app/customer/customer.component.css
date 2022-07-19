@@ -1,0 +1,35 @@
+.form-box{
+    width:320px;
+    height:420px;
+    background:rgba(0, 0, 0, 0.5);
+    color:#fff;
+    top:50%;
+    left:50%;
+    position:absolute;
+    transform:translate(-50%,-50%);
+    box-sizing:border-box;
+    padding: 45px 30px;
+    text-align: left;
+    margin-top: 30px;
+}
+.input-group{
+    position:absolute;
+   width:280px;
+    transition:.5s;
+}
+.form-box p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+.form-box input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.field{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    color: #fff;
+}

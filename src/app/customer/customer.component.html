@@ -1,1 +1,25 @@
-<p>customer works!</p>
+<div class="container data form-box">
+  <form action="" (ngSubmit)="submit()">
+    <p>Name</p>
+    <input  maxlength="100" type="text" required="required" class="field" placeholder="Enter Your Name"  />
+    <p>Mobile No</p>
+    <input  maxlength="100" type="number" required="required" class="field" placeholder="Enter Your Mobile Number"  />
+    <p>Email</p>
+    <input  maxlength="100" type="email" required="required" class="field" placeholder="Enter Your Email"  />
+    <p>City</p>
+    <input  maxlength="100" type="text" required="required" class="field" placeholder="Enter Your City"  />
+
+    <p>state</p>
+    <input
+      type="text"
+      name="address.state"
+      class="field"
+    />
+    <p>Country</p>
+    <input maxlength="100" type="text" required="required" class="field" placeholder="Enter Your Country" />
+    <p>Pin Code</p>
+    <input maxlength="100" type="text" required="required" class="field" placeholder="Enter Your Pin Code" />
+
+    <input type="submit" class="w-60 btn btn-md btn-success" value="Modify" />
+  </form>
+</div>
