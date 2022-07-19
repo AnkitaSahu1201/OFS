@@ -1,0 +1,33 @@
+<div class="hero">
+  <nav>
+    <h2 class="logo">Furnitures Around</h2>
+    <ul>
+      <li><a href="#"> Home </a></li>
+      <li><a href="#"> About </a></li>
+      <li><a href="#"> Service </a></li>
+      <li><a href="#"> Cart</a></li>
+      <li><a href="#"> Report </a></li>
+    </ul>
+    <button type="button" class="logOut">Logout</button>
+  </nav>
+  <div class="container" style="text-align: center">
+    <table class="table table-lg table-hover furnitures form-box">
+      <tr>
+        <th scope="col">billNo</th>
+        <th scope="col">customerName</th>
+        <th scope="col">quantity</th>
+        <th scope="col">price</th>
+      </tr>
+      
+      <tr *ngFor="let b of bills">
+        <td>{{ b.billNo }}</td>
+        <td>{{ b.customerName}}</td>
+        <td>{{b.quantity }}</td>
+        <td>{{b.price}}</td>
+  
+      </tr>
+    </table>
+  </div>
+</div>
+
+  

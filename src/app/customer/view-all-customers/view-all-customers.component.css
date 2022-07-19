@@ -3,14 +3,14 @@
     margin: 0;
     box-sizing:border-box;
     font-family:'Josefin Sans', sans-serif;
+   
 }
-
+ 
 .hero{
     height:100vh;
     width:100%;
-    
 }
-
+ 
 nav{
     display:flex;
     align-items:center;
@@ -20,11 +20,24 @@ nav{
     padding-right:10%;
 }
 .logo{
-
+ 
     color:white;
     font-size:35px;
 }
-
+ 
+/* .form-box{
+    width: 80%;
+    background:rgba(0, 0, 0, 0.5);
+    color:#fff;
+    top:50%;
+    left:50%;
+    position:absolute;
+    transform:translate(-50%,-50%);
+    box-sizing:border-box;
+    padding: 45px 30px;
+    text-align: left;
+    margin-top: 30px;
+} */
 nav ul li{
     list-style-type:none;
     display:inline-block;
@@ -40,7 +53,7 @@ nav ul li a:hover{
     color:#F4BFBF;
     transition:.3s;
 }
-button{
+.logOut{
     border:none;
     background:#5a4ac4fc;
     padding:12px 30px;
@@ -50,47 +63,24 @@ button{
     font-size:large;
     transition:.4s;
 }
-
-
-/* .data{
-    margin-top: 20px;
-    text-align: center;
-} */
-
-.form-box{
-    width:320px;
-    height:420px;
-    background:rgba(0, 0, 0, 0.5);
-    color:#fff;
-    top:50%;
-    left:50%;
-    position:absolute;
-    transform:translate(-50%,-50%);
-    box-sizing:border-box;
-    padding: 45px 30px;
-    text-align: left;
+ 
+.furnitures{
+    color: #fff;  
     margin-top: 30px;
+    margin-left: 100px;
 }
-.input-group{
-    position:absolute;
-   width:280px;
-    transition:.5s;
+ 
+.fImg{
+    width: 200px;
+    height: 100px;
 }
-.form-box p{
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
-}
-.form-box input{
-    width: 100%;
-    margin-bottom: 20px;
-}
-.field{
+ 
+th,tr,td,table{
     border: none;
-    border-bottom: 1px solid #fff;
-    background: transparent;
-    outline: none;
-    color: #fff;
 }
-
-
+ 
+button{
+    background: #2815a5fc;
+    border: none;
+    padding: 5px;
+}
