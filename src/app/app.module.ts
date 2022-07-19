@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { UpdateAddressComponent } from './address/update-address/update-address.component';
 import { AddfurnitureComponent } from './furniture-management/addfurniture/addfurniture.component';
 import { UpdateCustomerComponent } from './customer/update-customer/update-customer.component';
+import { ViewallbillsComponent } from './order/viewallbills/viewallbills.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { UpdateCustomerComponent } from './customer/update-customer/update-custo
     PaymentComponent,
     UpdateAddressComponent,
     UpdateCustomerComponent,
+    ViewallbillsComponent,
   
   ],
   imports: [
