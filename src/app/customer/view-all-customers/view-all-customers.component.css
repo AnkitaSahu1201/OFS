@@ -9,12 +9,12 @@
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
-
+ 
 .hero{
     height:100vh;
     width:100%;
 }
-
+ 
 nav{
     display:flex;
     align-items:center;
@@ -24,11 +24,11 @@ nav{
     padding-right:10%;
 }
 .logo{
-
+ 
     color:white;
     font-size:35px;
 }
-
+ 
 /* .form-box{
     width: 80%;
     background:rgba(0, 0, 0, 0.5);
@@ -67,22 +67,22 @@ nav ul li a:hover{
     font-size:large;
     transition:.4s;
 }
-
+ 
 .furnitures{
     color: #fff;  
     margin-top: 30px;
-    margin-left: 10px;
+    margin-left: 100px;
 }
-
+ 
 .fImg{
     width: 200px;
     height: 100px;
 }
-
+ 
 th,tr,td,table{
     border: none;
 }
-
+ 
 button{
     background: #2815a5fc;
     border: none;
