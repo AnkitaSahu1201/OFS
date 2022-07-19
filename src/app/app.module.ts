@@ -30,7 +30,8 @@ import { UpdateAddressComponent } from './address/update-address/update-address.
     CustomershoppingComponent,
     OrderCancellationComponent,
     PaymentComponent,
-    UpdateAddressComponent
+    UpdateAddressComponent,
+  
   ],
   imports: [
     BrowserModule,
