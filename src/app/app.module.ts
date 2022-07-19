@@ -19,6 +19,7 @@ import { UpdateAddressComponent } from './address/update-address/update-address.
 import { AddfurnitureComponent } from './furniture-management/addfurniture/addfurniture.component';
 import { UpdateCustomerComponent } from './customer/update-customer/update-customer.component';
 import { ViewAllFeedbackComponent } from './customerfeedback/view-all-feedback/view-all-feedback.component';
+import { UpdateFurnitureComponent } from './furniture-management/update-furniture/update-furniture.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,8 @@ import { ViewAllFeedbackComponent } from './customerfeedback/view-all-feedback/v
     UpdateAddressComponent,
     UpdateCustomerComponent,
     ViewAllFeedbackComponent,
+    AddfurnitureComponent,
+    UpdateFurnitureComponent
   
   ],
   imports: [
