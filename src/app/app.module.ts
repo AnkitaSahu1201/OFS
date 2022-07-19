@@ -17,6 +17,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { UpdateAddressComponent } from './address/update-address/update-address.component';
 import { AddfurnitureComponent } from './furniture-management/addfurniture/addfurniture.component';
+import { UpdateCustomerComponent } from './customer/update-customer/update-customer.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { AddfurnitureComponent } from './furniture-management/addfurniture/addfu
     OrderCancellationComponent,
     PaymentComponent,
     UpdateAddressComponent,
+    UpdateCustomerComponent,
   
   ],
   imports: [

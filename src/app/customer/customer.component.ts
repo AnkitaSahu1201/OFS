@@ -1,5 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Address } from '../model/address';
+import { Customer } from '../model/Customer';
+import { CustomerService } from './customer.service';
 
 @Component({
   selector: 'app-customer',
@@ -7,18 +10,17 @@ import { Address } from '../model/address';
   styleUrls: ['./customer.component.css']
 })
 export class CustomerComponent implements OnInit {
-   ngOnInit(): void {
-     throw new Error('Method not implemented.');
-   }
-   public address: Address = new Address();
-   public cust:Customer=new
-  constructor() { }
+  public address:Address=new Address();
+  public cust:Customer=new Customer();
+  constructor(private service:CustomerService) { }
 
   ngOnInit(): void {
   }
 
-}
-function ngOnInit() {
-  throw new Error('Function not implemented.');
+  submit():any{
+    this.cust.addresses.push(this.address);
+    console.log(this.cust);
+    this.service.registerNewUser(this.cust).subscribe(a=>this.cust=a);
+  }
 }
 

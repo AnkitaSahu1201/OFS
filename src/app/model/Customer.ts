@@ -13,4 +13,6 @@ export class Customer extends User{
     public cart:Cart;
     public orders:Order[]=[];
     public listReviews:Review[]=[];
+
+    
 }
