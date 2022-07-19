@@ -18,7 +18,8 @@ import { FormsModule } from '@angular/forms';
 import { UpdateAddressComponent } from './address/update-address/update-address.component';
 import { AddfurnitureComponent } from './furniture-management/addfurniture/addfurniture.component';
 import { UpdateCustomerComponent } from './customer/update-customer/update-customer.component';
-import { ViewAllCustomersComponent } from './customer/view-all-customers/view-all-customers.component';
+import { ViewAllFeedbackComponent } from './customerfeedback/view-all-feedback/view-all-feedback.component';
+import { UpdateFurnitureComponent } from './furniture-management/update-furniture/update-furniture.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,9 @@ import { ViewAllCustomersComponent } from './customer/view-all-customers/view-al
     PaymentComponent,
     UpdateAddressComponent,
     UpdateCustomerComponent,
-    ViewAllCustomersComponent,
+    ViewAllFeedbackComponent,
+    AddfurnitureComponent,
+    UpdateFurnitureComponent
   
   ],
   imports: [
