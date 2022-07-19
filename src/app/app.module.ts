@@ -15,6 +15,7 @@ import { OrderCancellationComponent } from './order-cancellation/order-cancellat
 import { PaymentComponent } from './payment/payment.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { UpdateAddressComponent } from './address/update-address/update-address.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FormsModule } from '@angular/forms';
     CustomerfeedbackComponent,
     CustomershoppingComponent,
     OrderCancellationComponent,
-    PaymentComponent
+    PaymentComponent,
+    UpdateAddressComponent
   ],
   imports: [
     BrowserModule,
