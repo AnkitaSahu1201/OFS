@@ -24,6 +24,6 @@ export class CustomershoppingService {
   }
 
   placeOrder(customerId:number):Observable<any>{
-    return this.h.put<any>(this.url+"/ placeOrder"+customerId,{responseType:'json'});
+    return this.h.put<any>(this.url+"/placeOrder"+customerId,{responseType:'json'});
   }
 }
