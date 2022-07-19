@@ -20,6 +20,7 @@ import { AddfurnitureComponent } from './furniture-management/addfurniture/addfu
 import { UpdateCustomerComponent } from './customer/update-customer/update-customer.component';
 import { ViewAllFeedbackComponent } from './customerfeedback/view-all-feedback/view-all-feedback.component';
 import { UpdateFurnitureComponent } from './furniture-management/update-furniture/update-furniture.component';
+import { ViewAllCustomersComponent } from './customer/view-all-customers/view-all-customers.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { UpdateFurnitureComponent } from './furniture-management/update-furnitur
     UpdateCustomerComponent,
     ViewAllFeedbackComponent,
     AddfurnitureComponent,
-    UpdateFurnitureComponent
+    UpdateFurnitureComponent,
+    ViewAllCustomersComponent
   
   ],
   imports: [

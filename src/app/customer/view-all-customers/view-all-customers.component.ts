@@ -10,22 +10,23 @@ import { ReportService } from 'src/app/report.service';
   styleUrls: ['./view-all-customers.component.css']
 })
 export class ViewAllCustomersComponent implements OnInit {
-  public address:Address=new Address();
-  public cust:Customer=new Customer();
-  public user:User=new User();
-
+  
+  public cust:Customer[]=[];
+  
+  
   constructor(private rs:ReportService) { }
 
   ngOnInit() {
+    this.ViewAll();
   }
- ViewAll():void{
+ 
+  ViewAll():void{
 
-  this.rs.getAllCustomers().subscribe((a) => this.address= a);
   this.rs.getAllCustomers().subscribe((a) => this.cust= a);
+  }
 
 }
  
 
 
 
-}
