@@ -1,6 +1,69 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box;
+    font-family:'Josefin Sans', sans-serif;
+}
+ 
+.hero{
+    height:100vh;
+    width:100%;
+    background-image:linear-gradient(rgba(3, 20, 207, 0.6),rgba(137, 131, 244, 0.6)),url(https://images.pexels.com/photos/1421176/pexels-photo-1421176.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-size: cover;
+    background-position:center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+}
+ 
+nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-top:40px;
+    padding-left:10%;
+    padding-right:10%;
+}
+.logo{
+ 
+    color:white;
+    font-size:35px;
+}
+ 
+nav ul li{
+    list-style-type:none;
+    display:inline-block;
+    padding:10px 20px;
+}
+nav ul li a{
+   font-size: large;
+   color:white;
+   text-decoration:none;
+   font-weight:bold;
+}
+nav ul li a:hover{
+    color:#F4BFBF;
+    transition:.3s;
+}
+button{
+    border:none;
+    background:#5a4ac4fc;
+    padding:12px 30px;
+    border-radius:30px;
+    color:white;
+    font-weight:bold;
+    font-size:large;
+    transition:.4s;
+}
+ 
+/* .data{
+    margin-top: 20px;
+    text-align: center;
+} */
+ 
 .form-box{
     width:320px;
-    height:420px;
+    height:570px;
     background:rgba(0, 0, 0, 0.5);
     color:#fff;
     top:50%;
@@ -10,7 +73,7 @@
     box-sizing:border-box;
     padding: 45px 30px;
     text-align: left;
-    margin-top: 30px;
+    /* margin-top: 30px; */
 }
 .input-group{
     position:absolute;

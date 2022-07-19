@@ -58,14 +58,14 @@ button{
     height:470px;
     background:rgba(0, 0, 0, 0.5);
     color:#fff;
-    top:50%;
+    top:55%;
     left:50%;
     position:absolute;
     transform:translate(-50%,-50%);
     box-sizing:border-box;
     padding: 45px 30px;
-    text-align: left;
-    margin-top: 30px;
+    text-align: center;
+    /* margin-top: 30px; */
 }
 .input-group{
     position:absolute;
