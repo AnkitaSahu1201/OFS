@@ -1,0 +1,25 @@
+<form >
+    Rating
+      <input
+        type="text"
+        name="rev.reviewRating"
+        class="field"
+        placeholder="Enter a Rating"
+        [(ngModel)]="rev.reviewRating"
+      />
+      <button (click)="viewAllReviewRating()" class="btn btn-info">View All Reviews</button><br><br>
+
+      <button (click)="viewAllReview()" class="btn btn-info">View All Reviews</button><br><br>
+      <table border="2" style="margin: auto;" *ngIf="viewlist">
+        <tr>
+            <th>ReviewId</th>
+            <th>Description</th>
+            <th>Rating</th>
+        </tr>
+        <tr *ngFor="let r of listrev">
+            <th>{{r.reviewId}}</th>
+            <th>{{r.description}}</th>
+            <th>{{r.reviewRating}}</th>
+        </tr>
+    </table>
+</form>
