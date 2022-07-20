@@ -23,6 +23,7 @@ import { UpdateFurnitureComponent } from './furniture-management/update-furnitur
 import { ViewAllCustomersComponent } from './customer/view-all-customers/view-all-customers.component';
 import { ViewallbillsComponent } from './order/viewallbills/viewallbills.component';
 import { ViewallordersComponent } from './order/viewallorders/viewallorders.component';
+import { GetOrderByStatusComponent } from './order/get-order-by-status/get-order-by-status.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { ViewallordersComponent } from './order/viewallorders/viewallorders.comp
     UpdateFurnitureComponent,
     ViewAllCustomersComponent,
     ViewallbillsComponent,
-    ViewallordersComponent
+    ViewallordersComponent,
+    GetOrderByStatusComponent
   
   ],
   imports: [
