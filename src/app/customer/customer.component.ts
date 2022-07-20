@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Address } from '../model/address';
+import { Cart } from '../model/Cart';
 import { Customer } from '../model/Customer';
 import { CustomerService } from './customer.service';
 
@@ -13,7 +14,8 @@ import { CustomerService } from './customer.service';
 export class CustomerComponent implements OnInit {
   public address:Address=new Address();
   public cust:Customer=new Customer();
-  constructor(private service:CustomerService,private r:ActivatedRoute) {
+  public cart:Cart=new Cart();
+  constructor(private service:CustomerService,private r:ActivatedRoute,private route:Router) {
     this.cust.username=this.r.snapshot.paramMap.get("username");
     this.cust.password=this.r.snapshot.paramMap.get("password");
     this.cust.role=this.r.snapshot.paramMap.get("role");
@@ -23,9 +25,14 @@ export class CustomerComponent implements OnInit {
   }
 
   submit():any{
+    this.cart.quantity=0;
+    this.cust.cart=this.cart;
     this.cust.addresses.push(this.address);
     console.log(this.cust);
     this.service.registerNewUser(this.cust).subscribe(a=>this.cust=a);
+    sessionStorage.setItem("userId",this.cust.uid.toString());
+    sessionStorage.setItem("cartId",this.cust.cart.cartId.toString());
+    this.route.navigate(["/ViewAllFurnitures"]);
   }
 }
 

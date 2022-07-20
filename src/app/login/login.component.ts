@@ -9,7 +9,7 @@ import { Customer } from '../model/Customer';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  public customer:Customer=new Customer();
+  public cust:Customer=new Customer();
   username:string;
   password:string;
   role:string;
@@ -21,7 +21,10 @@ export class LoginComponent implements OnInit {
   login():any{
     console.log(this.username,this.password,this.role);
     this.service.loginUser(this.username,this.password,this.role).subscribe(b=>{
-     if (b){
+     if (b!=null){
+        this.cust=b;
+        sessionStorage.setItem("userId",this.cust.uid.toString());
+        sessionStorage.setItem("cartId",this.cust.cart.cartId.toString());
         this.r.navigate(["/viewAllFurnitures"]);
       }
     },(err: Response) => {
