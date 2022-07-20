@@ -19,12 +19,18 @@ export class LoginComponent implements OnInit {
   }
 
   login():any{
+    console.log(this.username,this.password,this.role);
     this.service.loginUser(this.username,this.password,this.role).subscribe(b=>{
-      if(b){
+     if (b){
         this.r.navigate(["/viewAllFurnitures"]);
-      }else{
+      }
+    },(err: Response) => {
+      if (err['error'].errorMessage != 'undefined') {
+        console.log(err['error'].errorMessage);
+        alert(err['error'].errorMessage);
         this.r.navigate(["/registerUser"]);
       }
+
     })
   }
 }
