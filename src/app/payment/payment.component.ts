@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent implements OnInit {
+ check:Boolean=true;
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
+cod():void{
+  this.check=!this.check;
+}
 }

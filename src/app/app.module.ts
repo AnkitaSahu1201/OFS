@@ -25,6 +25,7 @@ import { ViewallbillsComponent } from './order/viewallbills/viewallbills.compone
 import { ViewallordersComponent } from './order/viewallorders/viewallorders.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterCustomerComponent } from './register-customer/register-customer.component';
+import { GetOrderByStatusComponent } from './order/get-order-by-status/get-order-by-status.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { RegisterCustomerComponent } from './register-customer/register-customer
     ViewallbillsComponent,
     ViewallordersComponent,
     LoginComponent,
-    RegisterCustomerComponent
+    RegisterCustomerComponent,
+    GetOrderByStatusComponent
   
   ],
   imports: [

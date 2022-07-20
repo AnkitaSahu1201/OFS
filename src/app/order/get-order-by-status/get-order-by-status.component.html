@@ -1,0 +1,50 @@
+<div class="hero">
+    <nav>
+      <h2 class="logo">Furnitures Around</h2>
+      <ul>
+        <li><a href="#"> Home </a></li>
+        <li><a href="#"> About </a></li>
+        <li><a href="#"> Service </a></li>
+        <li><a href="#"> Cart</a></li>
+        <li><a href="#"> Report </a></li>
+      </ul>
+      <button type="button" class="logOut">Logout</button>
+    </nav>
+    <div class="container" style="text-align: center">
+        <table class="table table-lg table-hover furnitures form-box">
+            <tr>
+                <th scope="col"><button (click)="undelivered()" class="btn btn-warning btn-lg btn3d"><span class="glyphicon glyphicon-warning-sign"></span>Undelivered</button></th>
+                <th scope="col"><button (click)="delivered()" class="btn btn-success btn-lg btn3d"><span class="glyphicon glyphicon-ok"></span>Delivered</button></th>
+                
+              </tr>
+        </table>
+        
+      <table class="table table-lg table-hover furnitures form-box"  >
+        <!-- *ngIf="d" -->
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">OrderDate</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+            <th scope="col">Status</th>
+        </tr>
+        <tr>
+          <td scope="col">123</td>
+          <td scope="col">20/09/2022</td>
+          <td scope="col">4</td>
+          <td scope="col">70000</td>
+          <td scope="col">Delivered</td>
+        </tr>
+
+        <tr *ngFor = "let o of del">
+            <td>{{ o.orderId}}</td>
+            <td>{{ o.orderDate }}</td>
+            <td>{{ o.quantity }}</td>
+            <td>{{ o.price }}</td>
+            <td>{{ o.status }}</td>
+           
+        </tr>
+        
+      </table>
+    </div>
+  </div>
