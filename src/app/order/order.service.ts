@@ -16,6 +16,10 @@ export class OrderService {
     return this.h.get<any[]>(this.url + "getAllOrders")
   }
 
+  getOrderById(orderId:number):Observable<any>{
+    return this.h.get<any>(this.url+"getOrderById/"+orderId,{responseType: 'json'})
+  }
+
   getOrderByStatus(status:String): Observable<any>{
     return this.h.get<any[]>(this.url + "status/" +status,{responseType: 'json'});
   }

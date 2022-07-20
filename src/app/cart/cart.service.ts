@@ -10,7 +10,7 @@ import { Cart } from '../model/Cart';
 export class CartService {
 
   constructor(private h:HttpClient) { }
-    url:string="http://localhost:9091";
+    url:string="http://localhost:9091/cart";
 
 
     getAllCarts():Observable<any>{

@@ -1,0 +1,58 @@
+<div class="hero">
+    <nav>
+      <h2 class="logo">Furnitures Around</h2>
+      <ul>
+        <li><a href="#"> Home </a></li>
+        <li><a href="#"> About </a></li>
+        <li><a href="/ViewFurniture"> Cart</a></li>
+        <li><a href="#"> Order </a></li>
+        <li><a href="#"> Profile </a></li>
+      </ul>
+      <button type="button" class="logOut">Logout</button>
+    </nav>
+    <div class="container" style="text-align: center">
+      <table class="table   furnitures">
+        <tr>
+          <th scope="col">Image</th>
+          <th scope="col">Name</th>
+          <th scope="col">Model</th>
+          <th scope="col">Colour</th>
+          <th scope="col">Price</th>
+          <th scope="col">Cart</th>
+        </tr>
+        <tr>
+          <td scope="col">
+            <img
+              src="https://images.pexels.com/photos/4846097/pexels-photo-4846097.jpeg"
+              alt=""
+              class="fImg"
+            />
+          </td>
+          <td scope="col">Sofa</td>
+          <td scope="col">Pepperfry</td>
+          <td scope="col">Blue</td>
+          <td scope="col">70000</td>
+          <td scope="col">
+            <button type="submit" class="btn btn-primary">Remove</button>
+          </td>
+        </tr>
+        <tr *ngFor="let f of furnitures">
+          <td scope="col">Img</td>
+          <td scope="col">{{ f.furnitureName }}</td>
+          <td scope="col">{{ f.furnitureColor }}</td>
+          <td scope="col">{{ f.furnitureModel }}</td>
+          <td scope="col">{{ f.price }}</td>
+          <td scope="col">
+            <button type="submit" class="btn btn-danger" (click)="remove(f)">
+             Remove
+            </button>
+          </td>
+        </tr>
+      </table>
+      <div class="shopDiv">
+      <button class="shop btn btn-primary" (click)="placeOrder()">Place Order</button>
+    <button class="shop btn btn-primary" (click)="continue()">Continue Shopping!</button>
+  </div>
+    </div>
+  </div>
+  

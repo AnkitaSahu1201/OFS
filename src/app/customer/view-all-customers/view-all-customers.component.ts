@@ -22,7 +22,7 @@ export class ViewAllCustomersComponent implements OnInit {
  
   ViewAll():void{
 
-  this.rs.getAllCustomers().subscribe((a) => this.cust= a);
+  this.rs.getAllCustomers().subscribe((a) => this.cust= a.filter(e=>{return e.role!="Admin"}));
   }
 
 }

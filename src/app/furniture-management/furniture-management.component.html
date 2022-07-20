@@ -4,9 +4,9 @@
     <ul>
       <li><a href="#"> Home </a></li>
       <li><a href="#"> About </a></li>
-      <li><a href="#"> Service </a></li>
-      <li><a href="#"> Cart</a></li>
-      <li><a href="#"> Report </a></li>
+      <li><a href="/ViewFurniture"> Cart</a></li>
+      <li><a href="/trackOrder"> Order </a></li>
+      <li><a href="#"> Profile </a></li>
     </ul>
     <button type="button" class="logOut">Logout</button>
   </nav>
@@ -19,6 +19,8 @@
         <th scope="col">Colour</th>
         <th scope="col">Price</th>
         <th scope="col">Cart</th>
+        <th scope="col" colspan="2">Review</th>
+       
       </tr>
       <tr>
         <td scope="col">
@@ -35,85 +37,11 @@
         <td scope="col">
           <button type="submit" class="btn btn-primary">Add to Cart</button>
         </td>
-      </tr>
-      <tr>
         <td scope="col">
-          <img
-            src="https://images.pexels.com/photos/4846097/pexels-photo-4846097.jpeg"
-            alt=""
-            class="fImg"
-          />
+          <button type="submit" class="btn btn-primary">Reviews</button>
         </td>
-        <td scope="col">Sofa</td>
-        <td scope="col">Pepperfry</td>
-        <td scope="col">Blue</td>
-        <td scope="col">70000</td>
         <td scope="col">
-          <button type="submit" class="btn btn-primary">Add to Cart</button>
-        </td>
-      </tr>
-      <tr>
-        <td scope="col">
-          <img
-            src="https://images.pexels.com/photos/4846097/pexels-photo-4846097.jpeg"
-            alt=""
-            class="fImg"
-          />
-        </td>
-        <td scope="col">Sofa</td>
-        <td scope="col">Pepperfry</td>
-        <td scope="col">Blue</td>
-        <td scope="col">70000</td>
-        <td scope="col">
-          <button type="submit" class="btn btn-primary">Add to Cart</button>
-        </td>
-      </tr>
-      <tr>
-        <td scope="col">
-          <img
-            src="https://images.pexels.com/photos/4846097/pexels-photo-4846097.jpeg"
-            alt=""
-            class="fImg"
-          />
-        </td>
-        <td scope="col">Sofa</td>
-        <td scope="col">Pepperfry</td>
-        <td scope="col">Blue</td>
-        <td scope="col">70000</td>
-        <td scope="col">
-          <button type="submit" class="btn btn-primary">Add to Cart</button>
-        </td>
-      </tr>
-      <tr>
-        <td scope="col">
-          <img
-            src="https://images.pexels.com/photos/4846097/pexels-photo-4846097.jpeg"
-            alt=""
-            class="fImg"
-          />
-        </td>
-        <td scope="col">Sofa</td>
-        <td scope="col">Pepperfry</td>
-        <td scope="col">Blue</td>
-        <td scope="col">70000</td>
-        <td scope="col">
-          <button type="submit" class="btn btn-primary">Add to Cart</button>
-        </td>
-      </tr>
-      <tr>
-        <td scope="col">
-          <img
-            src="https://images.pexels.com/photos/4846097/pexels-photo-4846097.jpeg"
-            alt=""
-            class="fImg"
-          />
-        </td>
-        <td scope="col">Sofa</td>
-        <td scope="col">Pepperfry</td>
-        <td scope="col">Blue</td>
-        <td scope="col">70000</td>
-        <td scope="col">
-          <button type="submit" class="btn btn-primary">Add to Cart</button>
+          <button type="submit" class="btn btn-primary">Add Review</button>
         </td>
       </tr>
       <tr *ngFor="let f of furnitures">
@@ -127,7 +55,14 @@
             Add to Cart
           </button>
         </td>
+        <td scope="col">
+          <button type="submit" class="btn btn-primary" (click)="review(f)">Reviews</button>
+        </td>
+        <td scope="col">
+          <button type="submit" class="btn btn-primary" (click)="addReview(f)">Add Review</button>
+        </td>
       </tr>
     </table>
+    
   </div>
 </div>

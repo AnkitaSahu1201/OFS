@@ -1,6 +1,6 @@
 import { Order } from "./order";
 
-export class bill{
+export class Bill{
     public billNo:number;
     public customerName:String ;
     public quantity:number;

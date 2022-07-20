@@ -5,7 +5,7 @@ export class Cart{
     
     public  cartId:number;
 	public customer:Customer;
-	public furniture: Furniture[] = [];
+	public furnitures: Furniture[] = [];
 	public  quantity:number;
 
 }

@@ -1,4 +1,6 @@
+import { Bill } from "./bill";
 import { Customer } from "./Customer";
+import { Furniture } from "./Furniture";
 
 export class Order {
     public orderId: number;
@@ -7,5 +9,7 @@ export class Order {
     public quantity: number;
     public price: number;
     public status: string;
+    public furniture:Furniture[]=[];
+    public bill:Bill;
 
 }

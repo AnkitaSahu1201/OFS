@@ -8,7 +8,7 @@ export class Furniture{
     public furnitureColor: string;
     public furnitureModel: string;
     public price: number;
-    public feedbacks:Review[]=[];
+    public feedBacks:Review[]=[];
     public carts:Cart[]=[];
 
 }

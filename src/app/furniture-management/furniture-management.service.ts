@@ -17,7 +17,7 @@ export class FurnitureManagementService {
 
 
   getFurnitureById(furnitureId:number):Observable<any>{
-    return this.h.get<any[]>(this.url + "getFurnituresById"+furnitureId);
+    return this.h.get<any[]>(this.url + "furnitures/"+furnitureId);
   }
 
 
@@ -34,12 +34,8 @@ export class FurnitureManagementService {
     return this.h.put(this.url + "furnitures"+furnitureId,furniture, {responseType: 'json'});
   }
 
-  deleteFurniture(furniture:Furniture):Observable<any>{
-    return this.h.delete(this.url + "remove");
-  }
-
   deleteFurnitureById(furnitureId:number):Observable<any>{
-    return this.h.delete(this.url + "remove/"+ furnitureId, {responseType: 'json'});
+    return this.h.delete(this.url + "furnitures/"+ furnitureId, {responseType: 'text'});
   }
 
 }

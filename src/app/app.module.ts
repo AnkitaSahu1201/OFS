@@ -26,6 +26,10 @@ import { ViewallordersComponent } from './order/viewallorders/viewallorders.comp
 import { LoginComponent } from './login/login.component';
 import { RegisterCustomerComponent } from './register-customer/register-customer.component';
 import { GetOrderByStatusComponent } from './order/get-order-by-status/get-order-by-status.component';
+import { ViewFurnitureByCartComponent } from './furniture-management/view-furniture-by-cart/view-furniture-by-cart.component';
+import { AdminComponent } from './admin/admin.component';
+import { PlaceOrderComponent } from './order/place-order/place-order.component';
+import { TrackOrderComponent } from './customer/track-order/track-order.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +54,11 @@ import { GetOrderByStatusComponent } from './order/get-order-by-status/get-order
     ViewallordersComponent,
     LoginComponent,
     RegisterCustomerComponent,
-    GetOrderByStatusComponent
+    GetOrderByStatusComponent,
+    ViewFurnitureByCartComponent,
+    AdminComponent,
+    PlaceOrderComponent,
+    TrackOrderComponent
   
   ],
   imports: [

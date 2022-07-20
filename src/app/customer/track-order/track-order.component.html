@@ -27,7 +27,7 @@
             <th scope="col">Quantity</th>
             <th scope="col">Price</th>
             <th scope="col">Status</th>
-            <th scope="col">Update</th>
+            
         </tr>
         <tr>
           <td scope="col">123</td>
@@ -35,9 +35,7 @@
           <td scope="col">4</td>
           <td scope="col">70000</td>
           <td scope="col">Delivered</td>
-          <td>
-            <button class="btn btn-primary">Update Status</button>
-          </td>
+          
         </tr>
 
         <tr *ngFor = "let o of del">
@@ -46,9 +44,7 @@
             <td>{{ o.quantity }}</td>
             <td>{{ o.price }}</td>
             <td>{{ o.status }}</td>
-            <td>
-              <button class="btn btn-primary" (click)="updateStatus(o.orderId)">Update Status</button>
-            </td>
+            
            
         </tr>
         

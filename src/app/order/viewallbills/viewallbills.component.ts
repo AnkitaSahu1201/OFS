@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { bill } from 'src/app/model/bill';
+import { Bill } from 'src/app/model/bill';
 import { ReportService } from 'src/app/report.service';
 
 
@@ -9,7 +9,7 @@ import { ReportService } from 'src/app/report.service';
   styleUrls: ['./viewallbills.component.css']
 })
 export class ViewallbillsComponent implements OnInit {
-  bills:bill[]=[];
+  bills:Bill[]=[];
   constructor(private h:ReportService) {
     this.h.getAllBills().subscribe(a=>this.bills=a);
    }

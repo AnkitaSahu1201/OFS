@@ -24,8 +24,12 @@ export class LoginComponent implements OnInit {
      if (b!=null){
         this.cust=b;
         sessionStorage.setItem("userId",this.cust.uid.toString());
+        sessionStorage.setItem("userName",this.cust.username);
         sessionStorage.setItem("cartId",this.cust.cart.cartId.toString());
-        this.r.navigate(["/viewAllFurnitures"]);
+        if(this.cust.role=="Customer")
+          this.r.navigate(["/viewAllFurnitures"]);
+        else if(this.cust.role=="Admin")  
+          this.r.navigate(["/adminPage"]);
       }
     },(err: Response) => {
       if (err['error'].errorMessage != 'undefined') {

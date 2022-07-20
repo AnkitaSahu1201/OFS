@@ -4,9 +4,9 @@
     <ul>
       <li><a href="#"> Home </a></li>
       <li><a href="#"> About </a></li>
-      <li><a href="#"> Service </a></li>
-      <li><a href="#"> Cart</a></li>
-      <li><a href="#"> Report </a></li>
+      <li><a href="/ViewFurniture"> Cart</a></li>
+      <li><a href="#"> Order </a></li>
+      <li><a href="#"> Profile </a></li>
     </ul>
     <button type="button">Logout</button>
   </nav>
@@ -18,6 +18,7 @@
     <p>Furniture name</p>
     <input
       type="text"
+      name="furniture.furnitureName"
       class="field"
       placeholder="enter the furniture name"
       [(ngModel)]="furniture.furnitureName"
@@ -26,6 +27,7 @@
     <p>Furniture Model</p>
     <input
       type="text"
+      name="furniture.furnitureModel"
       class="field"
       placeholder="enter the furniture model"
       [(ngModel)]="furniture.furnitureModel"
@@ -34,6 +36,7 @@
     <p>Color</p>
     <input
       type="text"
+      name="furniture.furnitureColor"
       class="field"
       placeholder="enter the furniture color"
       [(ngModel)]="furniture.furnitureColor"
@@ -42,6 +45,7 @@
     <p>Price</p>
     <input
       type="text"
+      name="furniture.price"
       class="field"
       placeholder="enter the furniture price"
       [(ngModel)]="furniture.price"
