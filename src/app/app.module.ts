@@ -23,6 +23,8 @@ import { UpdateFurnitureComponent } from './furniture-management/update-furnitur
 import { ViewAllCustomersComponent } from './customer/view-all-customers/view-all-customers.component';
 import { ViewallbillsComponent } from './order/viewallbills/viewallbills.component';
 import { ViewallordersComponent } from './order/viewallorders/viewallorders.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterCustomerComponent } from './register-customer/register-customer.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { ViewallordersComponent } from './order/viewallorders/viewallorders.comp
     UpdateFurnitureComponent,
     ViewAllCustomersComponent,
     ViewallbillsComponent,
-    ViewallordersComponent
+    ViewallordersComponent,
+    LoginComponent,
+    RegisterCustomerComponent
   
   ],
   imports: [
