@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-customer',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./register-customer.component.css']
 })
 export class RegisterCustomerComponent implements OnInit {
-
-  constructor() { }
+  username:string;
+  password:string;
+  role:string;
+  constructor(private route:Router) { }
 
   ngOnInit(): void {
   }
 
+  register():any{
+    this.route.navigate(["/fillData",this.username,this.password,this.role]);
+  }
 }

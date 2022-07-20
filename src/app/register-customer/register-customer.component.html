@@ -3,11 +3,20 @@
     <div class="form-box">
       <h1>Register</h1>
       <form id="login" class="input-group">
-        <input type="text" class="input-field" placeholder="User Id" required />
+        <input
+          type="text"
+          class="input-field"
+          placeholder="User Id"
+          required
+          [(ngModel)]="username"
+          name="username"
+        />
         <input
           type="text"
           class="input-field"
           placeholder="Enter Password"
+          [(ngModel)]="password"
+          name="password"
           required
         />
         <input
@@ -15,7 +24,8 @@
           class="chech-box"
           id="html"
           name="role"
-          value="admin"
+          value="Admin"
+          [(ngModel)]="role"
         />
         <label for="html">Admin</label><br />
         <input
@@ -23,10 +33,16 @@
           class="chech-box"
           id="customer"
           name="role"
-          value="customer"
+          value="Customer"
+          [(ngModel)]="role"
         />
         <label for="css">Customer</label>
-        <input type="submit" class="submit-btn" value="Register" />
+        <input
+          type="submit"
+          class="submit-btn"
+          value="Register"
+          (click)="register()"
+        />
       </form>
     </div>
   </div>

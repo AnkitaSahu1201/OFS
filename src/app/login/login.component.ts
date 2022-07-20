@@ -33,4 +33,8 @@ export class LoginComponent implements OnInit {
 
     })
   }
+
+  register():any{
+    this.r.navigate(["/registerUser"]);
+  }
 }
