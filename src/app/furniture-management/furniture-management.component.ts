@@ -12,7 +12,9 @@ export class FurnitureManagementComponent implements OnInit {
   public furnitures:Furniture[]=[];
   public furniture:Furniture;
   cartId:number;
-  constructor(private service:FurnitureManagementService,private shoppingService:CustomershoppingService) { }
+  constructor(private service:FurnitureManagementService,private shoppingService:CustomershoppingService) { 
+    this.cartId=parseInt(sessionStorage.getItem("cartId"));
+  }
 
   ngOnInit() {
     this.service.getAllFurnitures().subscribe(f=>this.furnitures=f);
