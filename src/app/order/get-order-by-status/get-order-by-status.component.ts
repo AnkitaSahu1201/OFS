@@ -16,14 +16,15 @@ export class GetOrderByStatusComponent implements OnInit {
   constructor(private h:OrderService) { }
 
   ngOnInit(): void {
+    this.undelivered();
   }
   delivered():void{
     // this.d=this.order.status.match("Delivered");
-    this.h.getAllOrders().subscribe((r)=>{this.del=r,this.d=true});
+    this.h.getOrderByStatus("Delivered").subscribe((r)=>{this.del=r,this.d=true});
     
   }
   undelivered():void{
-    this.h.getAllOrders().subscribe((r)=>{this.undel=r,this.d=true});
+    this.h.getOrderByStatus("Undelivered").subscribe((r)=>{this.del=r,this.d=true});
   }
   
 }
