@@ -12,8 +12,8 @@ export class CustomerService {
 
   url:string="http://localhost:9091/";
 
-  loginUser(username:string,password:string):Observable<any>{
-    return this.h.get(this.url+"validateUser",{responseType:'json'});
+  loginUser(username:string,password:string,role:string):Observable<any>{
+    return this.h.get(this.url+"validateUser/"+username+"/"+password+"/"+role,{responseType:'json'});
   }
 
   registerNewUser(customer:Customer):Observable<any>{
