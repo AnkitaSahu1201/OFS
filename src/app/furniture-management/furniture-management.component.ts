@@ -32,4 +32,8 @@ export class FurnitureManagementComponent implements OnInit {
   addReview(furniture:Furniture):any{
     this.route.navigate(["/addReviews",furniture.furnitureId]);
   }
+  logout():any{
+    sessionStorage.clear();
+    this.route.navigate([""]);
+  }
 }

@@ -1,17 +1,5 @@
 
 <div class="hero">
-    <nav>
-      <h2 class="logo">Furnitures Around</h2>
-      <ul>
-        <li><a href="/viewAllFurnitures"> Home </a></li>
-        <li><a href="#"> About </a></li>
-        <li><a href="/ViewFurniture"> Cart</a></li>
-        <li><a href="/trackOrder"> Order </a></li>
-        <li><a href="/update"> Profile </a></li>
-        <li><a href="/viewAddress"> Address </a></li>
-      </ul>
-      
-    </nav>
     <div class="container" style="text-align: center">
       <table class="table   furnitures">
         <tr>
@@ -22,7 +10,7 @@
           <th scope="col">Price</th>
          
         </tr>
-        <tr *ngFor="let f of furnitures">
+        <tr *ngFor="let f of order.furniture">
           <td scope="col"><img src="{{f.imgUrl}}" alt="" class="fImg"></td>
           <td scope="col">{{ f.furnitureName }}</td>
           <td scope="col">{{ f.furnitureModel }}</td>
@@ -38,7 +26,7 @@
     <div class="alignRight">
         <hr>
         <h4>Total Bill: {{cost}}</h4>
-        <button class="btn btn-success" (click)="proceed()">Proceed to Payment</button>
+        <button class="btn btn-success" (click)="back()"><- Back</button>
     </div>
   </div>
   

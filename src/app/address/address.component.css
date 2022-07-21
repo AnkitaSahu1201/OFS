@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.table{
+    width: 80%;
+    margin-top: 50px;
+    margin-left: 120px;
+    border: 3px;
+    color: #fff;
+    text-align: center;
+}
+tr{
+    background-color: rgba(220, 220, 220, 0.18);
+}
+.head{
+    color: rgba(1, 1, 10, 0.605);
+}
+.hero{
+    height: 100%;
+    width: 100%;
+   
+}
+.update{
+    width: 80px;
+    height: 35px;
+}
+.address{
+    margin-top: 20px;
+    margin-left: 76.3%;
+
+}
+.address button:last-child{
+    margin-left: 10px;
+}

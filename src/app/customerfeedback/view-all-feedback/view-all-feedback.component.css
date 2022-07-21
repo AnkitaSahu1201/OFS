@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.table{
+    width: 80%;
+    margin-top: 50px;
+    margin-left: 120px;
+    border: 3px;
+    color: #fff;
+}
+tr{
+    background-color: rgba(220, 220, 220, 0.18);
+}
+.head{
+    color: rgba(1, 1, 10, 0.605);
+}
+.hero{
+    height: 100%;
+    width: 100%;
+    background-image:linear-gradient(rgba(19, 52, 123, 0.692),rgba(102, 144, 234, 0.336)),url(https://images.pexels.com/photos/6610212/pexels-photo-6610212.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+.address{
+    margin-top: 20px;
+    margin-left: 83.3%;
+
+}
+.update{
+    width: 80px;
+    height: 35px;
+}

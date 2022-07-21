@@ -24,6 +24,10 @@ export class OrderService {
     return this.h.get<any[]>(this.url + "status/" +status,{responseType: 'json'});
   }
 
+  getOrderByCustomer(custId:number): Observable<any>{
+    return this.h.get<any[]>(this.url + "getOrderByCustomer/"+custId,{responseType: 'json'})
+  }
+
   updateOrder(order : Order): Observable<any>{
     return this.h.put(this.url + "updateOrder" ,order,{responseType: 'json'})
   }

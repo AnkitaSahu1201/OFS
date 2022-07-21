@@ -40,4 +40,8 @@ export class AdminComponent implements OnInit {
     });
  
   }
+  logout():any{
+    sessionStorage.clear();
+    this.route.navigate([""]);
+  }
 }

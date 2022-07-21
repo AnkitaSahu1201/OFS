@@ -1,15 +1,5 @@
 <div class="hero">
-  <nav>
-    <h2 class="logo">Furnitures Around</h2>
-    <ul>
-      <li><a href="#"> Home </a></li>
-        <li><a href="#"> About </a></li>
-        <li><a href="/ViewFurniture"> Cart</a></li>
-        <li><a href="#"> Order </a></li>
-        <li><a href="#"> Profile </a></li>
-    </ul>
-    <button type="button">Logout</button>
-  </nav>
+  
   <div class="container data form-box">
     <form action="" (ngSubmit)="submit()">
       <p>city</p>
@@ -41,6 +31,7 @@
         class="field"
       />
       <input type="submit" class="w-60 btn btn-md btn-success" value="Modify" />
+      <input type="button" class="w-60 btn btn-md btn-success" (click)="back()"value="<- Back" />
     </form>
   </div>
 </div>

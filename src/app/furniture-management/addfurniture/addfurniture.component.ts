@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Furniture } from 'src/app/model/Furniture';
@@ -10,7 +11,7 @@ import { FurnitureManagementService } from '../furniture-management.service';
 })
 export class AddfurnitureComponent implements OnInit {
   public furniture:Furniture=new Furniture();
-  constructor(public service:FurnitureManagementService,private route:Router) { }
+  constructor(public service:FurnitureManagementService,private route:Router,private l:Location) { }
 
   ngOnInit(): void {
   }
@@ -18,5 +19,8 @@ export class AddfurnitureComponent implements OnInit {
   submit():any{
     this.service.registerFurniture(this.furniture).subscribe(f=>this.furniture=f);
     this.route.navigate(["/adminPage"]).then(()=>window.location.reload());
+  }
+  back():any{
+    this.l.back();
   }
 }

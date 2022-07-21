@@ -10,22 +10,22 @@ import { Address } from '../model/address';
 export class AddressService {
 
   constructor(private h:HttpClient) { }
-  url:string="http://localhost:9091";
+  url:string="http://localhost:9091/addressManagement/address";
 
   addAddress(userId:number, address:Address):Observable<any>{
-    return this.h.post<any>(this.url+"/addAddress",address,{responseType:'json'});
+    return this.h.post<any>(this.url+"/"+userId,address,{responseType:'json'});
   }
 
   updateAddress(userId:number, address:Address):Observable<any>{
-    return this.h.put(this.url+"/updateAddress",address,{responseType:'json'});
+    return this.h.put(this.url+"/"+userId,address,{responseType:'json'});
   }
 
-  deleteAddress(userId:number, address:Address):Observable<any>{
-    return this.h.post(this.url+"/deleteAddress",address,{responseType:'json'});
+  deleteAddress(userId:number, aid:number):Observable<any>{
+    return this.h.delete(this.url+"/"+userId+"/"+aid,{responseType:'json'});
   }
 
   getAllAddresss(userId:number):Observable<any>{
-    return this.h.get<any>(this.url+"/getAdresses/"+userId);
+    return this.h.get<any>(this.url+"/"+userId);
   }
 
 }

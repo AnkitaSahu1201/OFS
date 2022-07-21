@@ -20,18 +20,7 @@
             <th scope="col">Status</th>
             <th scope="col">View Details</th>
         </tr>
-        <tr>
-          <td scope="col">123</td>
-          <td scope="col">20/09/2022</td>
-          <td scope="col">4</td>
-          <td scope="col">70000</td>
-          <td scope="col">Delivered</td>
-          <td scope="col">
-            <button type="submit" class="btn btn-primary">
-              Details
-            </button>
-          </td>
-        </tr>
+        
 
         <tr *ngFor = "let o of orders">
             <td>{{ o.orderId}}</td>

@@ -13,6 +13,7 @@ export class ViewFurnitureByCartComponent implements OnInit {
 public furnitures:Furniture[]=[];
 public cart:Cart = new Cart();
 cartId:number;
+public check:boolean;
   constructor(private service:CartService,private r:Router) { 
    this.cartId=parseInt(sessionStorage.getItem("cartId"));
   }
@@ -24,6 +25,7 @@ cartId:number;
       console.log(this.cart);
       
     });
+    
     
   }
   remove(furniture:Furniture):any{
@@ -39,6 +41,20 @@ cartId:number;
   }
 
   placeOrder():void{
-    this.r.navigate(["/placeOrder"]);
+    if(this.checkForEmptyCart()){
+      alert("Empty Cart!!!")
+    }
+    else{
+      this.r.navigate(["/placeOrder"]);
+    }
+  }
+  checkForEmptyCart():boolean{
+    if(this.cart.furnitures.length==0){
+      return true;
+    }
+    else{
+      return false;
+    }
+    
   }
 }

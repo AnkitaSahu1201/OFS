@@ -1,19 +1,16 @@
-<div class="hero">
-  <nav>
-    <h2 class="logo">Furnitures Around</h2>
-    <ul>
-      <li><a href="/adminPage"> Home </a></li>
-        <li><a href="#"> About </a></li>
-        <li><a href="/addFurniture">Add</a></li>
-        <li><a href="#"> Order </a></li>
-        <li><a href="#"> Customer </a></li>
-    </ul>
-    <button type="button">Logout</button>
-  </nav>
-</div>
+
 <div class="container data">
   <form action="" class="form-box" (ngSubmit)="submit()">
     <h1>Furniture details</h1>
+    <br />
+    <p>Furniture Image</p>
+    <input
+      type="text"
+      name="furniture.imgUrl"
+      class="field"
+      placeholder="Put the furniture image"
+      [(ngModel)]="furniture.imgUrl"
+    />
     <br />
     <p>Furniture name</p>
     <input
@@ -52,5 +49,6 @@
     />
     <br />
     <input type="submit" class="w-80 btn btn-md btn-success" value="Add" />
+    <input type="button" class="w-80 btn btn-md btn-success" (click)="back()" value="<- Back" />
   </form>
 </div>

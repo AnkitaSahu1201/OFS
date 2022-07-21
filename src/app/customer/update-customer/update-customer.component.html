@@ -1,15 +1,5 @@
 <div class="hero">
-  <!-- <nav>
-    <h2 class="logo">Furnitures Around</h2>
-    <ul>
-       <li><a href="#"> Home </a></li>
-       <li><a href="#"> About </a></li>
-       <li><a href="#"> Service </a></li>
-       <li><a href="#"> Cart</a></li>
-       <li><a href="#"> Report </a></li>
-    </ul>
-    <button type="button">Logout</button>
-  </nav> -->
+ 
   <div class="container data form-box">
     <form action="" (ngSubmit)="submit()">
       <p>Name</p>
@@ -42,24 +32,24 @@
         [(ngModel)]="cust.email"
         name="cust.email"
       />
-      <p>City</p>
+      <!-- <p>City</p>
       <input
         maxlength="100"
         type="text"
         required="required"
         class="field"
         placeholder="Enter Your City"
-        [(ngModel)]="address.city"
-        name="address.city"
+        [(ngModel)]="cust.addresses[0].city"
+        name="cust.addresses[0].city"
       />
 
       <p>State</p>
       <input
         type="text"
-        name="address.state"
+        name="cust.addresses[0].state"
         class="field"
         placeholder="Enter Your State"
-        [(ngModel)]="address.state"
+        [(ngModel)]="cust.addresses[0].state"
       />
       <p>Country</p>
       <input
@@ -68,8 +58,8 @@
         required="required"
         class="field"
         placeholder="Enter Your Country"
-        [(ngModel)]="address.country"
-        name="address.country"
+        [(ngModel)]="cust.addresses[0].country"
+        name="cust.addresses[0].country"
       />
       <p>Pin Code</p>
       <input
@@ -78,11 +68,12 @@
         required="required"
         class="field"
         placeholder="Enter Your Pin Code"
-        [(ngModel)]="address.pincode"
-        name="address.pincode"
-      />
+        [(ngModel)]="cust.addresses[0].pincode"
+        name="cust.addresses[0].pincode"
+      /> -->
 
       <input type="submit" class="w-60 btn btn-md btn-success" value="Modify" />
     </form>
+    <input type="button" class="w-60 btn btn-md btn-success" (click)="back()"  value="<- Back " />
   </div>
 </div>

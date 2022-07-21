@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Furniture } from 'src/app/model/Furniture';
@@ -11,7 +12,7 @@ import { FurnitureManagementService } from '../furniture-management.service';
 export class UpdateFurnitureComponent implements OnInit {
   public furniture:Furniture=new Furniture();
   public furnitureId:number;
-  constructor(private service:FurnitureManagementService,private r:ActivatedRoute,private route:Router) { 
+  constructor(private service:FurnitureManagementService,private r:ActivatedRoute,private route:Router,private l:Location) { 
     this.furnitureId=parseInt(this.r.snapshot.paramMap.get("Id"));
   }
 
@@ -24,5 +25,8 @@ export class UpdateFurnitureComponent implements OnInit {
     this.service.updateFurniture(this.furniture).subscribe(f=>this.furniture=f);
     this.route.navigate(["/adminPage"]).then(()=>window.location.reload());
     
+  }
+  back():any{
+    this.l.back();
   }
 }

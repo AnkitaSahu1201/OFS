@@ -1,7 +1,7 @@
 import { Customer } from "./Customer";
 
 export class Address {
-    public Aid: number;
+    public aid: number;
     public city: string;
     public state: string;
     public country: string;

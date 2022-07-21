@@ -8,7 +8,7 @@
         <li><a href="/viewOrderByStatus"> Order </a></li>
         <li><a href="/getAllCustomer"> Customer </a></li>
       </ul>
-      <button type="button" class="logOut">Logout</button>
+     
     </nav>
     <div class="container" style="text-align: center">
       <table class="table table-lg table-hover furnitures form-box">
@@ -21,16 +21,7 @@
                 
         
               </tr>
-              <tr>
-                <td scope="col">Purabi</td>
-                <td scope="col">95456766787</td>
-                <td scope="col">abcd@gmail.com</td>
-               
-        
-
-              </tr>
-              
-        
+             
               <tr *ngFor="let c of cust">
                   <td>{{ c.username }}</td>
                 <td>{{ c.mobileNo }}</td>
@@ -44,6 +35,7 @@
                
                
       </table>
+    
     </div>
 <body>
     

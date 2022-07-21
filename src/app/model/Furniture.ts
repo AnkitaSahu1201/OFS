@@ -4,6 +4,7 @@ import { Review } from './review';
 
 export class Furniture{
     public furnitureId: number;
+    public imgUrl:string;
     public furnitureName: string;
     public furnitureColor: string;
     public furnitureModel: string;

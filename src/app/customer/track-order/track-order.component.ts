@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Customer } from 'src/app/model/Customer';
 import { Order } from 'src/app/model/order';
 import { OrderService } from 'src/app/order/order.service';
@@ -18,36 +19,51 @@ export class TrackOrderComponent implements OnInit {
   public cust:Customer=new Customer();
   public customerId:number;
   public order:Order=new Order();
+  public oList:Order[]=[];
 
-  constructor(private h:OrderService,private rs:ReportService) { }
+
+  constructor(private h:OrderService,private rs:ReportService,private r: Router) { }
 
   ngOnInit(): void {
     this.customerId=parseInt(sessionStorage.getItem("userId"));
-    this.rs.getAllCustomers().subscribe(a=>this.custList=a);
-    for(let i=0;i<this.custList.length;i++){
-      if(this.customerId==this.custList[i].uid){
-        this.cust=this.custList[i];
-      }
-    }
-    console.log(this.cust);
-    this.undelivered();
+    this.h.getOrderByCustomer(this.customerId).subscribe(a=>this.del=a);
+    
+    // console.log(this.cust);
+    // this.undelivered();
   }
+  
   delivered():void{
-    for(let i=0;i<this.cust.orders.length;i++){
-      this.del=this.cust.orders.filter(o=>{
-        return o.status="Delivered";
-      })
-    }
+    this.h.getOrderByCustomer(this.customerId).subscribe(a=>{this.oList=a
+      console.log(this.oList);
+      for(let i=0;i<this.oList.length;i++){
+        this.del=this.oList.filter(o=>{
+          return o.status=="Delivered";
+        })
+      }
+      if(this.del.length==0){
+        alert("No Order Present with this status!!");
+      }
+    });
+    
+    
     
   }
   undelivered():void{
-    for(let i=0;i<this.cust.orders.length;i++){
-      this.del=this.cust.orders.filter(o=>{
-        return o.status="Undelievered";
-      })
-    }
+    this.h.getOrderByCustomer(this.customerId).subscribe(a=>{this.oList=a
+      console.log(this.oList);
+      for(let i=0;i<this.oList.length;i++){
+        this.del=this.oList.filter(o=>{
+          return o.status=="Undelievered";
+        })
+      }
+      if(this.del.length==0){
+        alert("No Order Present with this status!!");
+      }
+    });
   }
- 
+  viewDetails(orderId:number):any{
+    this.r.navigate(["/viewOrderDetail",orderId])
+  }
     
   
   

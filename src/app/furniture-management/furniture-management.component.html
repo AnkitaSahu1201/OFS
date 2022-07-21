@@ -2,13 +2,14 @@
   <nav>
     <h2 class="logo">Furnitures Around</h2>
     <ul>
-      <li><a href="#"> Home </a></li>
+      <li><a href="/viewAllFurnitures"> Home </a></li>
       <li><a href="#"> About </a></li>
       <li><a href="/ViewFurniture"> Cart</a></li>
       <li><a href="/trackOrder"> Order </a></li>
-      <li><a href="#"> Profile </a></li>
+      <li><a href="/update"> Profile </a></li>
+      <li><a href="/viewAddress"> Address </a></li>
     </ul>
-    <button type="button" class="logOut">Logout</button>
+    <button type="button" class="logOut" (click)="logout()">Logout</button>
   </nav>
   <div class="container" style="text-align: center">
     <table class="table   furnitures">
@@ -22,33 +23,11 @@
         <th scope="col" colspan="2">Review</th>
        
       </tr>
-      <tr>
-        <td scope="col">
-          <img
-            src="https://images.pexels.com/photos/4846097/pexels-photo-4846097.jpeg"
-            alt=""
-            class="fImg"
-          />
-        </td>
-        <td scope="col">Sofa</td>
-        <td scope="col">Pepperfry</td>
-        <td scope="col">Blue</td>
-        <td scope="col">70000</td>
-        <td scope="col">
-          <button type="submit" class="btn btn-primary">Add to Cart</button>
-        </td>
-        <td scope="col">
-          <button type="submit" class="btn btn-primary">Reviews</button>
-        </td>
-        <td scope="col">
-          <button type="submit" class="btn btn-primary">Add Review</button>
-        </td>
-      </tr>
       <tr *ngFor="let f of furnitures">
-        <td scope="col">Img</td>
+        <td scope="col"><img src="{{f.imgUrl}}" alt="" class="fImg"></td>
         <td scope="col">{{ f.furnitureName }}</td>
-        <td scope="col">{{ f.furnitureColor }}</td>
         <td scope="col">{{ f.furnitureModel }}</td>
+        <td scope="col">{{ f.furnitureColor }}</td>
         <td scope="col">{{ f.price }}</td>
         <td scope="col">
           <button type="submit" class="btn btn-danger" (click)="addToCart(f)">

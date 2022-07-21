@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FurnitureManagementService } from 'src/app/furniture-management/furniture-management.service';
@@ -14,7 +15,7 @@ export class ViewAllFeedbackComponent implements OnInit {
   public rev:Review=new Review();
   viewlist:boolean=false;
   rating:number;
-  constructor(private service:CustomerfeedbackService,private fservice:FurnitureManagementService, private r:ActivatedRoute) { 
+  constructor(private service:CustomerfeedbackService,private fservice:FurnitureManagementService, private r:ActivatedRoute,private l:Location) { 
     this.furnitureId=parseInt(this.r.snapshot.paramMap.get("Id"));
   }
   listrev:Review[];
@@ -24,13 +25,9 @@ export class ViewAllFeedbackComponent implements OnInit {
     });
 
   }
-  // viewAllReview():void{
-  //   this.service.getAllReviews().subscribe((r)=>{this.listrev=r,this.viewlist=true});
-  // }
-  // viewAllReviewRating():void{
-  //   this.service.getReviewByreviewRating(this.rating).subscribe((r)=>{this.listrev=r,this.viewlist=true});
-  // }
- 
+  back():void{
+    this.l.back();
+  }
  
   
 

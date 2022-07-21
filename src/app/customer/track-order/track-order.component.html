@@ -2,13 +2,13 @@
     <nav>
       <h2 class="logo">Furnitures Around</h2>
       <ul>
-        <li><a href="/adminPage"> Home </a></li>
+        <li><a href="/viewAllFurnitures"> Home </a></li>
         <li><a href="#"> About </a></li>
-        <li><a href="/addFurniture">Add</a></li>
-        <li><a href="/viewOrderByStatus"> Order </a></li>
-        <li><a href="/getAllCustomer"> Customer </a></li>
+        <li><a href="/ViewFurniture"> Cart</a></li>
+        <li><a href="/trackOrder"> Order </a></li>
+        <li><a href="/update"> Profile </a></li>
+        <li><a href="/viewAddress"> Address </a></li>
       </ul>
-      <button type="button" class="logOut">Logout</button>
     </nav>
     <div class="container" style="text-align: center">
         <table class="table table-lg table-hover furnitures form-box">
@@ -27,15 +27,8 @@
             <th scope="col">Quantity</th>
             <th scope="col">Price</th>
             <th scope="col">Status</th>
+            <th scope="col">Details</th>
             
-        </tr>
-        <tr>
-          <td scope="col">123</td>
-          <td scope="col">20/09/2022</td>
-          <td scope="col">4</td>
-          <td scope="col">70000</td>
-          <td scope="col">Delivered</td>
-          
         </tr>
 
         <tr *ngFor = "let o of del">
@@ -44,6 +37,9 @@
             <td>{{ o.quantity }}</td>
             <td>{{ o.price }}</td>
             <td>{{ o.status }}</td>
+            <td>
+              <button class="btn btn-primary" (click)="viewDetails(o.orderId)">View Details</button>
+            </td>
             
            
         </tr>

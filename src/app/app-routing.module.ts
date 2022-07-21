@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AddAddressComponent } from './address/add-address/add-address.component';
+import { AddressComponent } from './address/address.component';
+import { UpdateAddressComponent } from './address/update-address/update-address.component';
 import { AdminComponent } from './admin/admin.component';
 import { CustomerComponent } from './customer/customer.component';
 import { TrackOrderComponent } from './customer/track-order/track-order.component';
+import { UpdateCustomerComponent } from './customer/update-customer/update-customer.component';
 import { ViewAllCustomersComponent } from './customer/view-all-customers/view-all-customers.component';
 import { CustomerfeedbackComponent } from './customerfeedback/customerfeedback.component';
 import { ViewAllFeedbackComponent } from './customerfeedback/view-all-feedback/view-all-feedback.component';
@@ -13,6 +17,7 @@ import { ViewFurnitureByCartComponent } from './furniture-management/view-furnit
 import { LoginComponent } from './login/login.component';
 import { GetOrderByStatusComponent } from './order/get-order-by-status/get-order-by-status.component';
 import { PlaceOrderComponent } from './order/place-order/place-order.component';
+import { ViewOrderDetailsComponent } from './order/view-order-details/view-order-details.component';
 import { PaymentComponent } from './payment/payment.component';
 import { RegisterCustomerComponent } from './register-customer/register-customer.component';
 
@@ -76,6 +81,26 @@ const routes: Routes = [
   {
     path:"trackOrder",
     component:TrackOrderComponent
+  },
+  {
+    path:"update",
+    component:UpdateCustomerComponent
+  },
+  {
+    path:"updateAddress/:id",
+    component:UpdateAddressComponent
+  },
+  {
+    path:"viewAddress",
+    component:AddressComponent
+  },
+  {
+    path:"addAddress",
+    component:AddAddressComponent
+  },
+  {
+    path:"viewOrderDetail/:id",
+    component:ViewOrderDetailsComponent
   }
 
 

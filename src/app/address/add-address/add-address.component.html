@@ -1,0 +1,38 @@
+<div class="hero">
+  
+    <div class="container data form-box">
+      <form action="" (ngSubmit)="submit()">
+        <p>city</p>
+        <input
+          type="text"
+          name="address.city"
+          [(ngModel)]="address.city"
+          class="field"
+        />
+        <p>state</p>
+        <input
+          type="text"
+          name="address.state"
+          [(ngModel)]="address.state"
+          class="field"
+        />
+        <p>country</p>
+        <input
+          type="text"
+          name="address.country"
+          [(ngModel)]="address.country"
+          class="field"
+        />
+        <p>pincode</p>
+        <input
+          type="text"
+          name="address.pincode"
+          [(ngModel)]="address.pincode"
+          class="field"
+        />
+        <input type="submit" class="w-60 btn btn-md btn-success" value="Add" />
+        <input type="button" class="w-60 btn btn-md btn-success" (click)="back()"value="<- Back" />
+      </form>
+    </div>
+  </div>
+  

@@ -30,6 +30,9 @@ import { ViewFurnitureByCartComponent } from './furniture-management/view-furnit
 import { AdminComponent } from './admin/admin.component';
 import { PlaceOrderComponent } from './order/place-order/place-order.component';
 import { TrackOrderComponent } from './customer/track-order/track-order.component';
+import { AboutComponent } from './about/about.component';
+import { AddAddressComponent } from './address/add-address/add-address.component';
+import { ViewOrderDetailsComponent } from './order/view-order-details/view-order-details.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +61,10 @@ import { TrackOrderComponent } from './customer/track-order/track-order.componen
     ViewFurnitureByCartComponent,
     AdminComponent,
     PlaceOrderComponent,
-    TrackOrderComponent
+    TrackOrderComponent,
+    AboutComponent,
+    AddAddressComponent,
+    ViewOrderDetailsComponent
   
   ],
   imports: [

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Order } from 'src/app/model/order';
+import { ReportService } from 'src/app/report.service';
 import { OrderService } from '../order.service';
 
 @Component({
@@ -12,11 +14,11 @@ export class GetOrderByStatusComponent implements OnInit {
   public undel:Order[]=[];
   d:boolean=false;
   public order:Order=new Order();
-
-  constructor(private h:OrderService) { }
+  
+  constructor(private h:OrderService,private rs:ReportService,private r : Router) { }
 
   ngOnInit(): void {
-    this.undelivered();
+    this.rs.getAllOrders().subscribe(o=>this.del=o);
   }
   delivered():void{
     // this.d=this.order.status.match("Delivered");
@@ -38,8 +40,11 @@ export class GetOrderByStatusComponent implements OnInit {
      // console.log(o);
       this.h.updateOrder(o).subscribe(o=>this.order=o);
     });
+    window.location.reload();
     
-    
+  }
+  viewDetails(orderId:number):any{
+      this.r.navigate(["/viewOrderDetail",orderId]);
   }
   
 }
