@@ -31,6 +31,7 @@
             action="#action-url"
             class="form-box"
             (ngSubmit)="submit()"
+            #frm="ngForm"
           >
             <p style="color: white">
               <b
@@ -90,6 +91,8 @@
               name="commentText"
               placeholder="Description"
               [(ngModel)]="review.description"
+              #description="ngModel"
+              required
             ></textarea
             ><br />
             <br />
@@ -101,6 +104,7 @@
                 border: 0;
                 width: 30%;
               "
+              [disabled]="frm.invalid"
               class="w-60 btn btn-md btn-success"
               type="submit"
               value="Submit your review"

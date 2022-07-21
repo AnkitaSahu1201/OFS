@@ -1,6 +1,5 @@
-
 <div class="container data">
-  <form action="" class="form-box" (ngSubmit)="submit()">
+  <form #frm="ngForm" action="" class="form-box" (ngSubmit)="submit()">
     <h1>Furniture details</h1>
     <br />
     <p>Furniture Image</p>
@@ -10,7 +9,12 @@
       class="field"
       placeholder="Put the furniture image"
       [(ngModel)]="furniture.imgUrl"
+      #url="ngModel"
+      required
     />
+    <p *ngIf="url.invalid && url.dirty" class="alert alert-danger">
+      Image url is required
+    </p>
     <br />
     <p>Furniture name</p>
     <input
@@ -19,7 +23,12 @@
       class="field"
       placeholder="enter the furniture name"
       [(ngModel)]="furniture.furnitureName"
+      #fname="ngModel"
+      pattern="[a-zA-Z]"
     />
+    <p *ngIf="fname.invalid && fname.dirty" class="alert alert-danger">
+      Enter a valid name
+    </p>
     <br />
     <p>Furniture Model</p>
     <input
@@ -28,7 +37,12 @@
       class="field"
       placeholder="enter the furniture model"
       [(ngModel)]="furniture.furnitureModel"
+      #model="ngModel"
+      pattern="[a-zA-Z0-9]"
     />
+    <p *ngIf="fname.invalid && fname.dirty" class="alert alert-danger">
+      Enter a valid model
+    </p>
     <br />
     <p>Color</p>
     <input
@@ -37,7 +51,12 @@
       class="field"
       placeholder="enter the furniture color"
       [(ngModel)]="furniture.furnitureColor"
+      #color="ngModel"
+      pattern="[a-zA-Z]"
     />
+    <p *ngIf="color.invalid && color.dirty" class="alert alert-danger">
+      Enter a color
+    </p>
     <br />
     <p>Price</p>
     <input
@@ -46,9 +65,24 @@
       class="field"
       placeholder="enter the furniture price"
       [(ngModel)]="furniture.price"
+      #price="ngModel"
+      pattern="[0-9]"
     />
+    <p *ngIf="price.invalid && price.dirty" class="alert alert-danger">
+      Enter price
+    </p>
     <br />
-    <input type="submit" class="w-80 btn btn-md btn-success" value="Modify" />
-    <input type="button" class="w-80 btn btn-md btn-success" (click)="back()" value="<- Back" />
+    <input
+      [disabled]="frm.invalid"
+      type="submit"
+      class="w-80 btn btn-md btn-success"
+      value="Modify"
+    />
+    <input
+      type="button"
+      class="w-80 btn btn-md btn-success"
+      (click)="back()"
+      value="<- Back"
+    />
   </form>
 </div>

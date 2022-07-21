@@ -2,7 +2,7 @@
   <div class="hero">
     <div class="form-box">
       <h1>Register</h1>
-      <form id="login" class="input-group">
+      <form #frm="ngForm" id="login" class="input-group">
         <input
           type="text"
           #refuname="ngModel"
@@ -13,7 +13,10 @@
           [(ngModel)]="username"
           name="username"
         />
-        <p *ngIf="refuname.invalid  && refuname.dirty" class="alert alert-danger ">
+        <p
+          *ngIf="refuname.invalid && refuname.dirty"
+          class="alert alert-danger"
+        >
           Enter a valid name,character limit 5-50.
         </p>
         <input
@@ -26,7 +29,7 @@
           name="password"
           required
         />
-        <p *ngIf="refpass.invalid  && refpass.dirty" class="alert alert-danger ">
+        <p *ngIf="refpass.invalid && refpass.dirty" class="alert alert-danger">
           Enter a valid password,character min limit 4.
         </p>
         <input
@@ -51,9 +54,9 @@
           value="Customer"
           [(ngModel)]="role"
         />
-        
+
         <label for="css">Customer</label>
-        <p  *ngIf="refrole.invalid" class="alert alert-danger ">
+        <p *ngIf="refrole.invalid" class="alert alert-danger">
           Please select a role.
         </p>
         <input
@@ -61,6 +64,7 @@
           class="submit-btn"
           value="Register"
           (click)="register()"
+          [disabled]="frm.inavlid"
         />
       </form>
     </div>

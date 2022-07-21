@@ -1,17 +1,6 @@
 <div class="hero">
-  <!-- <nav>
-    <h2 class="logo">Furnitures Around</h2>
-    <ul>
-       <li><a href="#"> Home </a></li>
-       <li><a href="#"> About </a></li>
-       <li><a href="#"> Service </a></li>
-       <li><a href="#"> Cart</a></li>
-       <li><a href="#"> Report </a></li>
-    </ul>
-    <button type="button">Logout</button>
-  </nav> -->
   <div class="container data form-box">
-    <form action="" (ngSubmit)="submit()">
+    <form #frm="ngForm" action="" (ngSubmit)="submit()">
       <p>Name</p>
       <input
         maxlength="100"
@@ -21,7 +10,12 @@
         placeholder="Enter Your Name"
         [(ngModel)]="cust.username"
         name="cust.username"
+        #username="ngModel"
+        pattern="[a-zA-Z]{5,20}"
       />
+      <p *ngIf="username.invalid && username.dirty" class="alert alert-danger">
+        Enter a valid name,character limit 5-20.
+      </p>
       <p>Mobile No</p>
       <input
         maxlength="100"
@@ -31,7 +25,12 @@
         placeholder="Enter Your Mobile Number"
         [(ngModel)]="cust.mobileNo"
         name="cust.mobileNo"
+        #mobile="ngModel"
+        pattern="[6-9]{1}[0-9]{9}"
       />
+      <p *ngIf="mobile.invalid && mobile.dirty" class="alert alert-danger">
+        Enter a valid phone number
+      </p>
       <p>Email</p>
       <input
         maxlength="100"
@@ -41,7 +40,12 @@
         placeholder="Enter Your Email"
         [(ngModel)]="cust.email"
         name="cust.email"
+        #email="ngModel"
+        pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
       />
+      <p *ngIf="email.invalid && email.dirty" class="alert alert-danger">
+        Enter a valid email
+      </p>
       <p>City</p>
       <input
         maxlength="100"
@@ -51,8 +55,12 @@
         placeholder="Enter Your City"
         [(ngModel)]="address.city"
         name="address.city"
+        #city="ngModel"
+        pattern="[a-zA-Z]"
       />
-
+      <p *ngIf="city.invalid && city.dirty" class="alert alert-danger">
+        Enter a valid city name
+      </p>
       <p>State</p>
       <input
         type="text"
@@ -60,7 +68,12 @@
         class="field"
         placeholder="Enter Your State"
         [(ngModel)]="address.state"
+        #state="ngModel"
+        pattern="[a-zA-Z]"
       />
+      <p *ngIf="state.invalid && state.dirty" class="alert alert-danger">
+        Enter a valid state name
+      </p>
       <p>Country</p>
       <input
         maxlength="100"
@@ -70,7 +83,12 @@
         placeholder="Enter Your Country"
         [(ngModel)]="address.country"
         name="address.country"
+        #country="ngModel"
+        pattern="[a-zA-Z]"
       />
+      <p *ngIf="country.invalid && country.dirty" class="alert alert-danger">
+        Enter a valid country name
+      </p>
       <p>Pin Code</p>
       <input
         maxlength="100"
@@ -80,9 +98,18 @@
         placeholder="Enter Your Pin Code"
         [(ngModel)]="address.pincode"
         name="address.pincode"
+        #pincode="ngModel"
+        pattern="[0-9]{6}"
       />
-
-      <input type="submit" class="w-60 btn btn-md btn-success" value="Add" />
+      <p *ngIf="pincode.invalid && pincode.dirty" class="alert alert-danger">
+        Enter a valid country name
+      </p>
+      <input
+        type="submit"
+        [disabled]="frm.invalid"
+        class="w-60 btn btn-md btn-success"
+        value="Add"
+      />
     </form>
   </div>
 </div>

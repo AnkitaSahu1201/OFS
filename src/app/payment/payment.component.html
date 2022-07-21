@@ -7,7 +7,7 @@
       <button type="button" class="fas fa-wallet button" (click)="cod()">
         COD
       </button>
-      <form class="form">
+      <form #frm="ngForm" class="form">
         <div class="form-group">
           <label for="accountNo">
             <h6>Account Number</h6>
@@ -18,7 +18,15 @@
             placeholder="Account Number"
             required
             class="form-control input-group"
+            #accountNo="ngModel"
+            pattern="[0-9]{11,16}"
           />
+          <p
+            *ngIf="accountNo.invalid && accountNo.dirty"
+            class="alert alert-danger"
+          >
+            Enter a valid account no of 11-16 digits
+          </p>
         </div>
         <div class="form-group">
           <label for="username">
@@ -30,7 +38,12 @@
             placeholder="Card Owner Name"
             required
             class="form-control input-group"
+            #uname="ngModel"
+            pattern="[A-Z]{5,20}"
           />
+          <p *ngIf="uname.invalid && uname.dirty" class="alert alert-danger">
+            Enter name as per your card in capital letter
+          </p>
         </div>
         <div class="form-group">
           <label for="cardNumber">
@@ -43,6 +56,8 @@
               placeholder="Valid card number"
               class="form-control"
               required
+              #card="ngModel"
+              pattern="[0-9]{16}"
             />
             <div class="input-group-append">
               <span class="input-group-text text-muted">
@@ -51,6 +66,9 @@
                 <i class="fab fa-cc-amex mx-1"></i>
               </span>
             </div>
+            <p *ngIf="card.invalid && card.dirty" class="alert alert-danger">
+              Enter name as per your card in capital letter
+            </p>
           </div>
         </div>
         <div class="row form-group">
@@ -65,18 +83,30 @@
                 <input
                   type="number"
                   placeholder="MM"
-                  name=""
+                  name="month"
                   class="form-control"
                   required
+                  #month="ngModel"
+                  pattern="^(0?[1-9]|1[012])$"
                 />
                 <input
                   type="number"
                   placeholder="YY"
-                  name=""
+                  name="year"
                   class="form-control"
                   required
+                  #year="ngModel"
+                  pattern="[0-9]{2}"
                 />
               </div>
+              <p
+                *ngIf="
+                  (year.invalid && year.dirty) || (month.invalid && month.dirty)
+                "
+                class="alert alert-danger"
+              >
+                Enter a valid month and year
+              </p>
             </div>
           </div>
           <div class="col-sm-4">
@@ -87,8 +117,17 @@
               >
                 <h6>CVV <i class="fa fa-question-circle d-inline"></i></h6>
               </label>
-              <input type="text" required class="form-control input-group" />
+              <input
+                type="password"
+                required
+                class="form-control input-group"
+                #cvv="ngModel"
+                pattern="[0-9]{3}"
+              />
             </div>
+            <p *ngIf="cvv.invalid && cvv.dirty" class="alert alert-danger">
+              Enter a valid month and year
+            </p>
           </div>
         </div>
         <div class="card-footer">
@@ -97,6 +136,7 @@
             class="subscribe btn btn-primary btn-block shadow-sm"
             style="height: 40px"
             (click)="placeOrder()"
+            [disabled]="frm.invalid"
           >
             Confirm Payment
           </button>
@@ -132,5 +172,4 @@
       </div>
     </div>
   </div>
-
 </body>

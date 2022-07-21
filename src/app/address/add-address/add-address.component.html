@@ -1,38 +1,66 @@
 <div class="hero">
-  
-    <div class="container data form-box">
-      <form action="" (ngSubmit)="submit()">
-        <p>city</p>
-        <input
-          type="text"
-          name="address.city"
-          [(ngModel)]="address.city"
-          class="field"
-        />
-        <p>state</p>
-        <input
-          type="text"
-          name="address.state"
-          [(ngModel)]="address.state"
-          class="field"
-        />
-        <p>country</p>
-        <input
-          type="text"
-          name="address.country"
-          [(ngModel)]="address.country"
-          class="field"
-        />
-        <p>pincode</p>
-        <input
-          type="text"
-          name="address.pincode"
-          [(ngModel)]="address.pincode"
-          class="field"
-        />
-        <input type="submit" class="w-60 btn btn-md btn-success" value="Add" />
-        <input type="button" class="w-60 btn btn-md btn-success" (click)="back()"value="<- Back" />
-      </form>
-    </div>
+  <div class="container data form-box">
+    <form #frm="ngForm" action="" (ngSubmit)="submit()">
+      <p>city</p>
+      <input
+        type="text"
+        name="address.city"
+        [(ngModel)]="address.city"
+        class="field"
+        #city="ngModel"
+        pattern="[a-zA-Z]"
+      />
+      <p *ngIf="city.invalid && city.dirty" class="alert alert-danger">
+        Enter a valid city name
+      </p>
+      <p>state</p>
+      <input
+        type="text"
+        name="address.state"
+        [(ngModel)]="address.state"
+        class="field"
+        #state="ngModel"
+        pattern="[a-zA-Z]"
+      />
+      <p *ngIf="state.invalid && state.dirty" class="alert alert-danger">
+        Enter a valid state name
+      </p>
+      <p>country</p>
+      <input
+        type="text"
+        name="address.country"
+        [(ngModel)]="address.country"
+        class="field"
+        #country="ngModel"
+        pattern="[a-zA-Z]"
+      />
+      <p *ngIf="country.invalid && country.dirty" class="alert alert-danger">
+        Enter a valid country name
+      </p>
+      <p>pincode</p>
+      <input
+        type="text"
+        name="address.pincode"
+        [(ngModel)]="address.pincode"
+        class="field"
+        #pincode="ngModel"
+        pattern="[0-9]{6}"
+      />
+      <p *ngIf="pincode.invalid && pincode.dirty" class="alert alert-danger">
+        Enter a valid pincode of 6 digits
+      </p>
+      <input
+        type="submit"
+        class="w-60 btn btn-md btn-success"
+        [disabled]="frm.invalid"
+        value="Add"
+      />
+      <input
+        type="button"
+        class="w-60 btn btn-md btn-success"
+        (click)="back()"
+        value="<- Back"
+      />
+    </form>
   </div>
-  
+</div>

@@ -1,7 +1,6 @@
 <div class="hero">
- 
   <div class="container data form-box">
-    <form action="" (ngSubmit)="submit()">
+    <form #frm="ngForm" action="" (ngSubmit)="submit()">
       <p>Name</p>
       <input
         maxlength="100"
@@ -11,7 +10,12 @@
         placeholder="Enter Your Name"
         [(ngModel)]="cust.username"
         name="cust.username"
+        #username="ngModel"
+        pattern="[a-zA-Z]{5,20}"
       />
+      <p *ngIf="username.invalid && username.dirty" class="alert alert-danger">
+        Enter a valid name,character limit 5-20.
+      </p>
       <p>Mobile No</p>
       <input
         maxlength="100"
@@ -21,7 +25,12 @@
         placeholder="Enter Your Mobile Number"
         [(ngModel)]="cust.mobileNo"
         name="cust.mobileNo"
+        #mobile="ngModel"
+        pattern="[6-9]{1}[0-9]{9}"
       />
+      <p *ngIf="mobile.invalid && mobile.dirty" class="alert alert-danger">
+        Enter a valid phone number
+      </p>
       <p>Email</p>
       <input
         maxlength="100"
@@ -31,49 +40,24 @@
         placeholder="Enter Your Email"
         [(ngModel)]="cust.email"
         name="cust.email"
+        #email="ngModel"
+        pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
       />
-      <!-- <p>City</p>
+      <p *ngIf="email.invalid && email.dirty" class="alert alert-danger">
+        Enter a valid email
+      </p>
       <input
-        maxlength="100"
-        type="text"
-        required="required"
-        class="field"
-        placeholder="Enter Your City"
-        [(ngModel)]="cust.addresses[0].city"
-        name="cust.addresses[0].city"
+        type="submit"
+        [disabled]="frm.invalid"
+        class="w-60 btn btn-md btn-success"
+        value="Modify"
       />
-
-      <p>State</p>
-      <input
-        type="text"
-        name="cust.addresses[0].state"
-        class="field"
-        placeholder="Enter Your State"
-        [(ngModel)]="cust.addresses[0].state"
-      />
-      <p>Country</p>
-      <input
-        maxlength="100"
-        type="text"
-        required="required"
-        class="field"
-        placeholder="Enter Your Country"
-        [(ngModel)]="cust.addresses[0].country"
-        name="cust.addresses[0].country"
-      />
-      <p>Pin Code</p>
-      <input
-        maxlength="100"
-        type="text"
-        required="required"
-        class="field"
-        placeholder="Enter Your Pin Code"
-        [(ngModel)]="cust.addresses[0].pincode"
-        name="cust.addresses[0].pincode"
-      /> -->
-
-      <input type="submit" class="w-60 btn btn-md btn-success" value="Modify" />
     </form>
-    <input type="button" class="w-60 btn btn-md btn-success" (click)="back()"  value="<- Back " />
+    <input
+      type="button"
+      class="w-60 btn btn-md btn-success"
+      (click)="back()"
+      value="<- Back "
+    />
   </div>
 </div>
