@@ -5,38 +5,57 @@
       <form id="login" class="input-group">
         <input
           type="text"
+          #refuname="ngModel"
+          pattern="[a-zA-Z]{5,20}"
           class="input-field"
           placeholder="User Id"
           required
           [(ngModel)]="username"
           name="username"
         />
+        <p *ngIf="refuname.invalid  && refuname.dirty" class="alert alert-danger ">
+          Enter a valid name,character limit 5-50.
+        </p>
         <input
-          type="text"
+          type="password"
+          #refpass="ngModel"
+          pattern="[a-zA-Z0-9]{4,}"
           class="input-field"
           placeholder="Enter Password"
           [(ngModel)]="password"
           name="password"
           required
         />
+        <p *ngIf="refpass.invalid  && refpass.dirty" class="alert alert-danger ">
+          Enter a valid password,character min limit 4.
+        </p>
         <input
           type="radio"
           class="chech-box"
           id="html"
+          #refrole="ngModel"
           name="role"
+          required
           value="Admin"
           [(ngModel)]="role"
         />
         <label for="html">Admin</label><br />
+
         <input
           type="radio"
           class="chech-box"
           id="customer"
+          #refrole="ngModel"
           name="role"
+          required
           value="Customer"
           [(ngModel)]="role"
         />
+        
         <label for="css">Customer</label>
+        <p  *ngIf="refrole.invalid" class="alert alert-danger ">
+          Please select a role.
+        </p>
         <input
           type="submit"
           class="submit-btn"

@@ -7,16 +7,18 @@ body{
      height:100%;
      width:100%;
      background-image:url(https://images.pexels.com/photos/12639296/pexels-photo-12639296.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
-     /* background-position:center; */
+     background-position:center; 
      background-size:cover;
+     background-attachment: fixed;
+     background-repeat: no-repeat;
      position:absolute;
      text-align: center;
 }
 .form-box{
    width:380px;
-    height:450px;
+    height:max-content;
    position:relative;
-   margin:6% auto;
+   margin:3% auto;
     background:#fff;
    padding:5px;
    overflow: hidden;
@@ -37,7 +39,7 @@ body{
     position:absolute; */
    width:280px;
     transition:.5s;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 .input-field{
    width:100%;
@@ -83,6 +85,7 @@ label,span{
     cursor:pointer;
     display:block;
    margin-top: 10px;
+   margin-bottom: 10px;
     background:linear-gradient(to right,#0078AA,#7ed2f6);
     border:0;
     outline:none;
