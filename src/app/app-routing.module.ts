@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AboutComponent } from './about/about.component';
 import { AddAddressComponent } from './address/add-address/add-address.component';
 import { AddressComponent } from './address/address.component';
 import { UpdateAddressComponent } from './address/update-address/update-address.component';
@@ -101,6 +102,10 @@ const routes: Routes = [
   {
     path:"viewOrderDetail/:id",
     component:ViewOrderDetailsComponent
+  },
+  {
+    path:"about",
+    component:AboutComponent
   }
 
 

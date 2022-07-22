@@ -3,7 +3,9 @@ import { Router } from '@angular/router';
 import { CartService } from '../cart/cart.service';
 import { CustomerService } from '../customer/customer.service';
 import { CustomershoppingService } from '../customershopping/customershopping.service';
+import { Account } from '../model/Account';
 import { Bill} from '../model/bill';
+import { Card } from '../model/Card';
 import { Cart } from '../model/Cart';
 import { Customer } from '../model/Customer';
 import { Order } from '../model/order';
@@ -14,6 +16,8 @@ import { Order } from '../model/order';
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent implements OnInit {
+  public account:Account=new Account();
+  public card:Card=new Card();
   check:Boolean=true;
   public cartId:number;
   public cart:Cart=new Cart();

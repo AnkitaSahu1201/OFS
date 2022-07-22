@@ -8,7 +8,8 @@
         [(ngModel)]="address.city"
         class="field"
         #city="ngModel"
-        pattern="[a-zA-Z]"
+        required
+        pattern="[a-zA-Z]*"
       />
       <p *ngIf="city.invalid && city.dirty" class="alert alert-danger">
         Enter a valid city name
@@ -19,8 +20,9 @@
         name="address.state"
         [(ngModel)]="address.state"
         class="field"
+        required
         #state="ngModel"
-        pattern="[a-zA-Z]"
+        pattern="[a-zA-Z]*"
       />
       <p *ngIf="state.invalid && state.dirty" class="alert alert-danger">
         Enter a valid state name
@@ -31,8 +33,9 @@
         name="address.country"
         [(ngModel)]="address.country"
         class="field"
+        required
         #country="ngModel"
-        pattern="[a-zA-Z]"
+        pattern="[a-zA-Z]*"
       />
       <p *ngIf="country.invalid && country.dirty" class="alert alert-danger">
         Enter a valid country name
@@ -43,6 +46,7 @@
         name="address.pincode"
         [(ngModel)]="address.pincode"
         class="field"
+        required
         #pincode="ngModel"
         pattern="[0-9]{6}"
       />

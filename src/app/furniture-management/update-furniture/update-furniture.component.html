@@ -24,7 +24,8 @@
       placeholder="enter the furniture name"
       [(ngModel)]="furniture.furnitureName"
       #fname="ngModel"
-      pattern="[a-zA-Z]"
+      required
+      pattern="[a-zA-Z]*"
     />
     <p *ngIf="fname.invalid && fname.dirty" class="alert alert-danger">
       Enter a valid name
@@ -38,9 +39,10 @@
       placeholder="enter the furniture model"
       [(ngModel)]="furniture.furnitureModel"
       #model="ngModel"
-      pattern="[a-zA-Z0-9]"
+      required
+      pattern="[a-zA-Z0-9]*"
     />
-    <p *ngIf="fname.invalid && fname.dirty" class="alert alert-danger">
+    <p *ngIf="model.invalid && model.dirty" class="alert alert-danger">
       Enter a valid model
     </p>
     <br />
@@ -52,7 +54,8 @@
       placeholder="enter the furniture color"
       [(ngModel)]="furniture.furnitureColor"
       #color="ngModel"
-      pattern="[a-zA-Z]"
+      required
+      pattern="[a-zA-Z]*"
     />
     <p *ngIf="color.invalid && color.dirty" class="alert alert-danger">
       Enter a color
@@ -66,7 +69,8 @@
       placeholder="enter the furniture price"
       [(ngModel)]="furniture.price"
       #price="ngModel"
-      pattern="[0-9]"
+      required
+      pattern="[0-9]*"
     />
     <p *ngIf="price.invalid && price.dirty" class="alert alert-danger">
       Enter price

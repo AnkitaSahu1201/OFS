@@ -14,9 +14,9 @@
 }
 .form-box{
     width: 430px;
-    height: 500px;
+    height: max-content;
     position: relative;
-    margin: 6% auto;
+    margin: 3% auto;
     background: #fff;
     padding:5px ;
 }
@@ -26,6 +26,7 @@
 }
 .input-group{
 margin-top: 5px;
+
 }
 .button-box{
     width: 220px;
@@ -93,4 +94,7 @@ input[type="radio"]{
     margin-left: 10%;
     width: 80%;
     
+}
+.subscribe{
+    margin-bottom: 10px;
 }

@@ -19,6 +19,7 @@
             required
             class="form-control input-group"
             #accountNo="ngModel"
+            [(ngModel)]="account.accountNumber"
             pattern="[0-9]{11,16}"
           />
           <p
@@ -37,11 +38,12 @@
             name="username"
             placeholder="Card Owner Name"
             required
+            [(ngModel)]="card.customerName"
             class="form-control input-group"
-            #uname="ngModel"
-            pattern="[A-Z]{5,20}"
+            #username="ngModel"
+            pattern="[A-Z ]{5,20}"
           />
-          <p *ngIf="uname.invalid && uname.dirty" class="alert alert-danger">
+          <p *ngIf="username.invalid && username.dirty" class="alert alert-danger">
             Enter name as per your card in capital letter
           </p>
         </div>
@@ -57,6 +59,7 @@
               class="form-control"
               required
               #card="ngModel"
+              [(ngModel)]="card.cardNo"
               pattern="[0-9]{16}"
             />
             <div class="input-group-append">
@@ -67,7 +70,7 @@
               </span>
             </div>
             <p *ngIf="card.invalid && card.dirty" class="alert alert-danger">
-              Enter name as per your card in capital letter
+              Enter a valid 16 digit Card Number
             </p>
           </div>
         </div>
@@ -87,6 +90,7 @@
                   class="form-control"
                   required
                   #month="ngModel"
+                  [(ngModel)]="card.month"
                   pattern="^(0?[1-9]|1[012])$"
                 />
                 <input
@@ -96,6 +100,7 @@
                   class="form-control"
                   required
                   #year="ngModel"
+                  [(ngModel)]="card.year"
                   pattern="[0-9]{2}"
                 />
               </div>
@@ -122,11 +127,13 @@
                 required
                 class="form-control input-group"
                 #cvv="ngModel"
+                name="cvv"
+                [(ngModel)]="card.cvv"
                 pattern="[0-9]{3}"
               />
             </div>
             <p *ngIf="cvv.invalid && cvv.dirty" class="alert alert-danger">
-              Enter a valid month and year
+              Enter a cvv
             </p>
           </div>
         </div>

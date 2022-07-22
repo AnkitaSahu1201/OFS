@@ -54,7 +54,7 @@ button{
 
 .form-box{
     width:400px;
-    height:620px;
+    height:max-content;
     background:rgba(0, 0, 0, 0.5);
     color:#fff;
     top:50%;
@@ -62,9 +62,9 @@ button{
     position:absolute;
     transform:translate(-50%,-50%);
     box-sizing:border-box;
-    padding: 45px 30px;
+    padding: 45px 30px 10px 30px;
     text-align: left;
-    /* margin-top: 40px; */
+    margin-top: 180px;
     margin-bottom: 50px;
 }
 .input-group{
