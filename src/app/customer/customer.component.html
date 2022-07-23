@@ -11,7 +11,7 @@
         [(ngModel)]="cust.username"
         name="cust.username"
         #username="ngModel"
-        pattern="[a-zA-Z]{5,20}"
+        pattern="[a-zA-Z ]{5,20}"
       />
       <p *ngIf="username.invalid && username.dirty" class="alert alert-danger">
         Enter a valid name,character limit 5-20.
@@ -56,7 +56,7 @@
         [(ngModel)]="address.city"
         name="address.city"
         #city="ngModel"
-        pattern="[a-zA-Z]*"
+        pattern="[a-zA-Z ]*"
       />
       <p *ngIf="city.invalid && city.dirty" class="alert alert-danger">
         Enter a valid city name
@@ -69,7 +69,7 @@
         placeholder="Enter Your State"
         [(ngModel)]="address.state"
         #state="ngModel"
-        pattern="[a-zA-Z]*"
+        pattern="[a-zA-Z ]*"
       />
       <p *ngIf="state.invalid && state.dirty" class="alert alert-danger">
         Enter a valid state name
@@ -84,7 +84,7 @@
         [(ngModel)]="address.country"
         name="address.country"
         #country="ngModel"
-        pattern="[a-zA-Z]*"
+        pattern="[a-zA-Z ]*"
       />
       <p *ngIf="country.invalid && country.dirty" class="alert alert-danger">
         Enter a valid country name
@@ -102,7 +102,7 @@
         pattern="[0-9]{6}"
       />
       <p *ngIf="pincode.invalid && pincode.dirty" class="alert alert-danger">
-        Enter a valid country name
+        Enter a valid pincode of 6 digits
       </p>
       <input
         type="submit"

@@ -11,7 +11,7 @@
         [(ngModel)]="cust.username"
         name="cust.username"
         #username="ngModel"
-        pattern="[a-zA-Z]{5,20}"
+        pattern="[a-zA-Z ]{5,20}"
       />
       <p *ngIf="username.invalid && username.dirty" class="alert alert-danger">
         Enter a valid name,character limit 5-20.

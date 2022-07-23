@@ -9,7 +9,7 @@
         class="field"
         #city="ngModel"
         required
-        pattern="[a-zA-Z]*"
+        pattern="[a-zA-Z ]*"
       />
       <p *ngIf="city.invalid && city.dirty" class="alert alert-danger">
         Enter a valid city name
@@ -22,7 +22,7 @@
         class="field"
         required
         #state="ngModel"
-        pattern="[a-zA-Z]*"
+        pattern="[a-zA-Z ]*"
       />
       <p *ngIf="state.invalid && state.dirty" class="alert alert-danger">
         Enter a valid state name
@@ -35,7 +35,7 @@
         class="field"
         required
         #country="ngModel"
-        pattern="[a-zA-Z]*"
+        pattern="[a-zA-Z ]*"
       />
       <p *ngIf="country.invalid && country.dirty" class="alert alert-danger">
         Enter a valid country name
