@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './about/about.component';
+import { AdminAboutComponent } from './about/admin-about/admin-about.component';
 import { AddAddressComponent } from './address/add-address/add-address.component';
 import { AddressComponent } from './address/address.component';
 import { UpdateAddressComponent } from './address/update-address/update-address.component';
@@ -24,90 +25,93 @@ import { RegisterCustomerComponent } from './register-customer/register-customer
 
 const routes: Routes = [
   {
-    path:"",
-    component:LoginComponent
+    path: "",
+    component: LoginComponent
   },
   {
-    path:"viewAllFurnitures",
-    component:FurnitureManagementComponent
+    path: "viewAllFurnitures",
+    component: FurnitureManagementComponent
   },
   {
-    path:"registerUser",
-    component:RegisterCustomerComponent
+    path: "registerUser",
+    component: RegisterCustomerComponent
   },
   {
-    path:"fillData/:username/:password/:role",
-    component:CustomerComponent
+    path: "fillData/:username/:password/:role",
+    component: CustomerComponent
   },
   {
-    path:"ViewFurniture",
-    component:ViewFurnitureByCartComponent
+    path: "ViewFurniture",
+    component: ViewFurnitureByCartComponent
   },
   {
-    path:"viewReviews/:Id",
-    component:ViewAllFeedbackComponent
+    path: "viewReviews/:Id",
+    component: ViewAllFeedbackComponent
   },
   {
-    path:"addReviews/:Id",
-    component:CustomerfeedbackComponent
+    path: "addReviews/:Id",
+    component: CustomerfeedbackComponent
   },
   {
-    path:"adminPage",
-    component:AdminComponent
+    path: "adminPage",
+    component: AdminComponent
   },
   {
-    path:"updateFurniture/:Id",
-    component:UpdateFurnitureComponent
+    path: "updateFurniture/:Id",
+    component: UpdateFurnitureComponent
   },
   {
-    path:"addFurniture",
-    component:AddfurnitureComponent
+    path: "addFurniture",
+    component: AddfurnitureComponent
   },
   {
-    path:"viewOrderByStatus",
-    component:GetOrderByStatusComponent
+    path: "viewOrderByStatus",
+    component: GetOrderByStatusComponent
   },
   {
-    path:"getAllCustomer",
-    component:ViewAllCustomersComponent
+    path: "getAllCustomer",
+    component: ViewAllCustomersComponent
   },
   {
-    path:"placeOrder",
-    component:PlaceOrderComponent
+    path: "placeOrder",
+    component: PlaceOrderComponent
   },
   {
-    path:"payment",
-    component:PaymentComponent
+    path: "payment",
+    component: PaymentComponent
   },
   {
-    path:"trackOrder",
-    component:TrackOrderComponent
+    path: "trackOrder",
+    component: TrackOrderComponent
   },
   {
-    path:"update",
-    component:UpdateCustomerComponent
+    path: "update",
+    component: UpdateCustomerComponent
   },
   {
-    path:"updateAddress/:id",
-    component:UpdateAddressComponent
+    path: "updateAddress/:id",
+    component: UpdateAddressComponent
   },
   {
-    path:"viewAddress",
-    component:AddressComponent
+    path: "viewAddress",
+    component: AddressComponent
   },
   {
-    path:"addAddress",
-    component:AddAddressComponent
+    path: "addAddress",
+    component: AddAddressComponent
   },
   {
-    path:"viewOrderDetail/:id",
-    component:ViewOrderDetailsComponent
+    path: "viewOrderDetail/:id",
+    component: ViewOrderDetailsComponent
   },
   {
-    path:"about",
-    component:AboutComponent
+    path: "about",
+    component: AboutComponent
+  },
+  {
+    path: "adminAbout",
+    component: AdminAboutComponent
   }
-
 
 ];
 

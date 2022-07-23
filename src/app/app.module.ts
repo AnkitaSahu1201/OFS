@@ -33,6 +33,7 @@ import { TrackOrderComponent } from './customer/track-order/track-order.componen
 import { AboutComponent } from './about/about.component';
 import { AddAddressComponent } from './address/add-address/add-address.component';
 import { ViewOrderDetailsComponent } from './order/view-order-details/view-order-details.component';
+import { AdminAboutComponent } from './about/admin-about/admin-about.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { ViewOrderDetailsComponent } from './order/view-order-details/view-order
     TrackOrderComponent,
     AboutComponent,
     AddAddressComponent,
-    ViewOrderDetailsComponent
+    ViewOrderDetailsComponent,
+    AdminAboutComponent
   
   ],
   imports: [
